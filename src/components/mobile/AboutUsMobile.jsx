@@ -1,6 +1,6 @@
-import { Box, Text, Flex, Image } from "@chakra-ui/react";
+import { Box, Text, Image, Flex } from "@chakra-ui/react";
 
-const Explore = () => {
+const AboutUsMobile = () => {
   const cardData = [
     {
       title: "Pooja",
@@ -26,19 +26,32 @@ const Explore = () => {
 
   return (
     <Box marginTop="10" padding="4" bg="gray.50">
-      <Text fontSize="3xl" fontWeight="bold" mb="4" textAlign="left">
-        Explore
+      <Text fontSize="2xl" fontWeight="bold" mb="4" textAlign="left">
+        About Us
       </Text>
-      <Text fontSize="2xl" mb="8" textAlign="left">
+      <Text fontSize="lg" mb="8" textAlign="left">
         We are dedicated to providing spiritual guidance and services through our various rituals and ceremonies. Join us in celebrating and understanding our traditions.
       </Text>
+      
       <Flex overflowX="scroll" paddingBottom="4">
         {cardData.map((card, index) => (
-          <Box key={index} borderWidth="1px" borderRadius="20px" overflow="hidden" bg="white" minWidth="250px" marginRight="4">
+          <Box
+            key={index}
+            minWidth="250px"
+            borderWidth="1px"
+            borderRadius="10px"
+            overflow="hidden"
+            bg="white"
+            mr="4"  // Add margin between cards
+          >
             <Image src={card.imageUrl} alt={card.title} />
             <Box padding="4">
-              <Text fontWeight="bold" textAlign="left">{card.title}</Text>
-              <Text fontSize="sm" textAlign="left">{card.description}</Text>
+              <Text fontWeight="bold" textAlign="left" fontSize="md">
+                {card.title}
+              </Text>
+              <Text fontSize="sm" textAlign="left">
+                {card.description}
+              </Text>
             </Box>
           </Box>
         ))}
@@ -47,4 +60,4 @@ const Explore = () => {
   );
 };
 
-export default Explore;
+export default AboutUsMobile;

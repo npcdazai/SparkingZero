@@ -1,7 +1,7 @@
 import { Box, Button, Text } from "@chakra-ui/react";
 import { useState } from "react";
 
-const Carousel = () => {
+const CarouselMobile = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   
   const items = [
@@ -85,4 +85,4 @@ const Carousel = () => {
   );
 };
 
-export default Carousel;
+export default CarouselMobile;

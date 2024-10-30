@@ -1,7 +1,7 @@
 import { Box, Text, Image, Flex } from "@chakra-ui/react";
 import { FaPray, FaCalendarAlt } from "react-icons/fa"; // Icons for each category
 
-const Categories = () => {
+const CategoriesMobile = () => {
   const categories = [
     {
       title: "Pooja",
@@ -61,4 +61,4 @@ const Categories = () => {
   );
 };
 
-export default Categories;
+export default CategoriesMobile;
