@@ -9,6 +9,7 @@ import Payment from "./Payment";
 import ServiceRow from "./ServicesRow";
 import UpcomingEvents from "./UpcomingEvents";
 import { Box, useBreakpointValue } from "@chakra-ui/react";
+import CardCaro from "../components/Ui/CardCaro"
 
 const Home = () => {
   // const test = useBreakpointValue ({
@@ -21,6 +22,7 @@ const Home = () => {
       <Carousel />
       <AboutUs />
       <OurServices />
+      <CardCaro/>
       <UpcomingEvents />
       <Donation />
       <ServiceRow />
