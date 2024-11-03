@@ -7,6 +7,7 @@ import slider4 from "../../assets/Images/members/images/pp4.jpg";
 import slider5 from "../../assets/Images/members/images/pp5.jpg";
 import slider6 from "../../assets/Images/members/images/pp6.jpg";
 import slider7 from "../../assets/Images/members/images/pp2.jpg";
+import offering from "../../assets/Images/cowoffering.png"
 import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { NavLink } from "react-router-dom";
 
@@ -63,6 +64,8 @@ const Members = () => {
     <Box
       id="mainmembers"
       bgGradient="linear(to-b, #F6B253, #FF9500)"
+      // bgImage={offering}
+      // bgSize="cover"
       display="flex"
       flexDirection="column"
       alignItems="center"
@@ -116,12 +119,13 @@ const Members = () => {
           ))}
         </Box>
 
-        <Flex alignItems="flex-end" w="50%" textAlign="center"  >
+        <Flex alignItems="center" w="60%" textAlign="center" h="200px" >
           {membersData.map((member, index) => (
-            <Box
+            <Flex
               key={index}
               position="absolute"
               transition="opacity 0.5s ease-in-out"
+              alignItems="center"
               opacity={tabIndex === index ? 1 : 0}
             //   display={tabIndex === index ? "block" : "none"}
             >
@@ -137,7 +141,7 @@ const Members = () => {
               <Text fontSize="lg" fontWeight="500" color="#4B2E39">
                 {member.role}
               </Text>
-            </Box>
+            </Flex>
           ))}
         </Flex>
       </Box>
