@@ -1,4 +1,4 @@
-import { Box, Button, Container, Flex, Image, Text } from "@chakra-ui/react";
+import { Box, Text, Flex, Image } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
 import slider1 from "../../assets/Images/members/images/mainbab.jpg";
 import slider2 from "../../assets/Images/members/images/person1.jpg";
@@ -72,17 +72,15 @@ const Members = () => {
       p={8}
       borderRadius="20px"
       w="100%"
-    //   maxW="1200px"
-    //   mx="auto"
     >
       <Text
         as="h1"
-        fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
+        fontSize={{ base: "xl", md: "2xl", lg: "3xl" }}  // Reduced font size
         fontWeight="bold"
         fontFamily="Roca Two"
         color="#800000"
         mb={6}
-        textAlign="center"
+        // textAlign="center"
       >
         Our Esteemed Members
       </Text>
@@ -96,8 +94,8 @@ const Members = () => {
       >
         <Box
           position="relative"
-          w="50%"
-          h="400px"
+          w={{ base: "100%", md: "50%" }}  // Full width on mobile, 50% on larger screens
+          h="350px"  // Adjusted height
           display="flex"
           justifyContent="center"
           alignItems="center"
@@ -110,7 +108,7 @@ const Members = () => {
               position="absolute"
               top={0}
               h="100%"
-              w="100%"
+              w="90%"
               objectFit="cover"
               borderRadius="10px"
               transition="opacity 0.5s ease-in-out"
@@ -119,7 +117,7 @@ const Members = () => {
           ))}
         </Box>
 
-        <Flex flexDirection="column" alignItems="center" w="50%" textAlign="center" h="200px" >
+        <Flex alignItems="flex-end" w="50%" textAlign="center"  >
           {membersData.map((member, index) => (
             <Flex
               key={index}
@@ -127,18 +125,17 @@ const Members = () => {
               transition="opacity 0.5s ease-in-out"
               alignItems="center"
               opacity={tabIndex === index ? 1 : 0}
-            //   display={tabIndex === index ? "block" : "none"}
             >
               <Text
                 fontFamily="Roca Two"
-                fontSize="4rem"
+                fontSize={{ base: "2xl", md: "3xl" }}  // Reduced font size for name
                 fontWeight="bold"
                 color="#800000"
                 mb={2}
               >
                 {member.name}
               </Text>
-              <Text fontSize="lg" fontWeight="500" color="#4B2E39">
+              <Text fontSize={{ base: "md", md: "lg" }} fontWeight="500" color="#4B2E39">
                 {member.role}
               </Text>
             </Flex>
