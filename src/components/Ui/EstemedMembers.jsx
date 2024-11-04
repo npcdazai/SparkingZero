@@ -50,7 +50,7 @@ const EstemedMembers = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 3) % membersData.length);
-    }, 3000); // Change slides every 3 seconds
+    }, 5000); 
     return () => clearInterval(interval);
   }, [membersData.length]);
 

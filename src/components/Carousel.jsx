@@ -1,11 +1,13 @@
-import { Box, Button, Text, HStack } from "@chakra-ui/react";
+import { Box, Button, HStack } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import FirstCard from "./Ui/Cards/FirstCard";
-import offering from "../assets/Images/cowoffering.png"
-import coro from "../assets/Images/coro.png"
+import SecondCard from "./Ui/Cards/Secondcardo";
+import offering from "../assets/Images/cowoffering.png";
+import coro from "../assets/Images/coro.png";
+
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const intervalTime = 10000; 
+  const intervalTime = 10000;
 
   const items = [
     {
@@ -18,11 +20,15 @@ const Carousel = () => {
       title: "Pooja 2",
       description: "Description of Pooja 2",
       imageUrl: offering,
+      component: <SecondCard />,
     },
     {
       title: "Pooja 3",
       description: "Description of Pooja 3",
       imageUrl: coro,
+      component: <Box bg="gray.200" height="100%" display="flex" alignItems="center" justifyContent="center">
+                    <Box as="span" fontSize="xl">Pooja 3 Content</Box>
+                 </Box>,
     },
   ];
 
@@ -47,27 +53,18 @@ const Carousel = () => {
       borderRadius="20px"
       overflow="hidden"
       bg="gray.100"
+      w="full"
+      h="400px"
     >
       <Box
-        as="img"
-        src={items[currentIndex].imageUrl}
-        width="100%"
-        height="400px"
-        objectFit="cover"
-      />
-      <Box
-        position="absolute"
-        bottom="10px"
-        left="50%"
-        transform="translateX(-50%)"
         textAlign="center"
         w="100%"
-        height="100%"
+        h="100%"
+        position="relative"
       >
         {items[currentIndex].component}
       </Box>
 
-      {/* Navigation Buttons */}
       <Button
         position="absolute"
         left="10px"
@@ -77,8 +74,8 @@ const Carousel = () => {
         borderRadius="full"
         bg="white"
         size="lg"
-        padding="12px"
-        _hover={{ bg: "orange" }}
+        p="12px"
+        _hover={{ bg: "orange.400" }}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -99,8 +96,8 @@ const Carousel = () => {
         borderRadius="full"
         bg="white"
         size="lg"
-        padding="12px"
-        _hover={{ bg: "orange" }}
+        p="12px"
+        _hover={{ bg: "orange.400" }}
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
