@@ -82,7 +82,7 @@ const Members = () => {
         fontFamily="Roca Two"
         color="#800000"
         mb={6}
-        // textAlign="center"
+        textAlign="center"
       >
         Our Esteemed Members
       </Text>
@@ -110,7 +110,7 @@ const Members = () => {
               position="absolute"
               top={0}
               h="100%"
-              w="90%"
+              w="100%"
               objectFit="cover"
               borderRadius="10px"
               transition="opacity 0.5s ease-in-out"
@@ -119,7 +119,7 @@ const Members = () => {
           ))}
         </Box>
 
-        <Flex alignItems="center" w="60%" textAlign="center" h="200px" >
+        <Flex flexDirection="column" alignItems="center" w="50%" textAlign="center" h="200px" >
           {membersData.map((member, index) => (
             <Flex
               key={index}

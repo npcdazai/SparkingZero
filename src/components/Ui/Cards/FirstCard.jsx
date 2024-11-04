@@ -1,10 +1,13 @@
 import { Box, Button, Image, Text, VStack } from "@chakra-ui/react";
 import bannner1 from "../../../assets/Images/banner1.jpg";
-
+import OrangeBg from "../../../assets/logos/OrangeWallpaper.jpeg"
+import asset from "../../../assets/logos/fix.png"
 const FirstCard = () => {
   return (
     <Box
-      bgGradient="linear(to-b, #F6B253, #FF9500)"
+      // bgGradient="linear(to-b, #F6B253, #FF9500)"
+      bgImage={OrangeBg}
+      bgSize="contain"
       display="flex"
       flexDirection={{ base: "column", md: "row" }}
       justifyContent="space-between"
@@ -14,7 +17,9 @@ const FirstCard = () => {
       w="100%"
       h="100%"
       borderRadius="20px"
+      position="relative"
     >
+      <Image opacity="0.5" bottom={0} src={asset} w="100%" position="absolute"/>
       <Box
         bgColor="transparent"
         w="50%"
