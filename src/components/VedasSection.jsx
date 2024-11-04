@@ -16,7 +16,7 @@ import {
 import { CheckCircleIcon } from "@chakra-ui/icons";
 import lordGanesha from "../assets/Images/new_Images/LordGanesh.jpeg";
 import LordShiva from "../assets/Images/new_Images/LordShiva.jpeg";
-import temple from "../assets/Images/new_Images/treeImg.png";
+import temple from "../assets/Images/new_Images/finnal.png";
 import greenforest from "../assets/Images/greencow.png";
 
 function VedasSection() {
