@@ -72,7 +72,7 @@ const EstemedMembers = () => {
       w="100%"
       h="100%"
       overflow="hidden"
-      border="1px solid #FF9500"
+      // border="1px solid #FF9500"
       position="relative"
       zIndex={1}
     >
