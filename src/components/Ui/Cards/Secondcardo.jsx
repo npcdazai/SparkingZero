@@ -8,13 +8,14 @@ const SecondCard = () => {
   return (
     <Box
       // bgGradient="linear(to-b, #F6B253, #FF9500)"
-      bgImage={OrangeBg}
-      bgSize="contain"
+      // bgImage={OrangeBg}
+      // bgSize="cover"
+      // bgRepeat="no-repeat"
       display="flex"
       flexDirection={{ base: "column", md: "row" }}
       justifyContent="space-between"
       alignItems="center"
-      p={8}
+      py={8}
       gap={6}
       w="100%"
       h="100%"
@@ -22,10 +23,10 @@ const SecondCard = () => {
       position="relative"
     >
       <Image
-        opacity="0.5"
         bottom={0}
-        src={asset}
+        src={OrangeBg}
         w="100%"
+        h="100%"
         position="absolute"
       />
       <Box

@@ -2,6 +2,7 @@ import { Box, Button, HStack } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import FirstCard from "./Ui/Cards/FirstCard";
 import SecondCard from "./Ui/Cards/Secondcardo";
+import ThirdCard from "./Ui/Cards/ThirdCardo"
 import offering from "../assets/Images/cowoffering.png";
 import coro from "../assets/Images/coro.png";
 
@@ -26,9 +27,7 @@ const Carousel = () => {
       title: "Pooja 3",
       description: "Description of Pooja 3",
       imageUrl: coro,
-      component: <Box bg="gray.200" height="100%" display="flex" alignItems="center" justifyContent="center">
-                    <Box as="span" fontSize="xl">Pooja 3 Content</Box>
-                 </Box>,
+      component: <ThirdCard/>,
     },
   ];
 

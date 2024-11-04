@@ -1,31 +1,32 @@
 import { Box, Button, Image, Text, VStack } from "@chakra-ui/react";
 import bannner1 from "../../../assets/Images/banner1.jpg";
-import OrangeBg from "../../../assets/images/purple.png";
+import OrangeBg from "../../../assets/images/pink.png";
 import asset from "../../../assets/logos/fix.png";
-import offering from "../../../assets/Images/bannercow.png";
+import offering from "../../../assets/Images/diwali.png";
 import coro from "../../../assets/Images/coro.png";
 const SecondCard = () => {
   return (
     <Box
       // bgGradient="linear(to-b, #F6B253, #FF9500)"
-      bgImage={OrangeBg}
+    //   bgImage={OrangeBg}
       bgSize="contain"
       display="flex"
       flexDirection={{ base: "column", md: "row" }}
       justifyContent="space-between"
       alignItems="center"
-      p={8}
+      py={8}
       gap={6}
       w="100%"
       h="100%"
       borderRadius="20px"
-      position="relative"
+    //   position="relative"
     >
       <Image
-        opacity="0.5"
+        // opacity="0.5"
         bottom={0}
-        src={asset}
+        src={OrangeBg}
         w="100%"
+        h={"100%"}
         position="absolute"
       />
       <Box
