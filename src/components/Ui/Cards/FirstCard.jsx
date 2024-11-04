@@ -12,7 +12,7 @@ const FirstCard = () => {
       flexDirection={{ base: "column", md: "row" }}
       justifyContent="space-between"
       alignItems="center"
-      p={8}
+      py={8}
       gap={6}
       w="100%"
       h="100%"
