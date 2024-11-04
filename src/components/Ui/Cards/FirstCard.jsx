@@ -5,7 +5,6 @@ import asset from "../../../assets/logos/fix.png"
 const FirstCard = () => {
   return (
     <Box
-      // bgGradient="linear(to-b, #F6B253, #FF9500)"
       bgImage={OrangeBg}
       bgSize="contain"
       display="flex"
