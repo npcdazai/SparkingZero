@@ -18,7 +18,7 @@ const SecondCard = () => {
       h="100%"
       borderRadius="20px"
       position="relative"
-      px={{ base: 4, md: 8 }} // Padding for different screen sizes
+      // px={{ base: 4, md: 8 }}
     >
       <Image
         bottom={0}

@@ -18,7 +18,7 @@ const SecondCard = () => {
       h="100%"
       borderRadius="20px"
       position="relative"
-      px={{ base: 4, md: 8 }} // Padding for responsiveness
+    //   px={{ base: 4, md: 8 }}
     >
       <Image
         src={OrangeBg}
