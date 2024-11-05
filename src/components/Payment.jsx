@@ -1,5 +1,5 @@
 import { Box, Text, SimpleGrid, Icon, Button } from "@chakra-ui/react";
-import { FaCreditCard, FaUniversity, FaMobileAlt, FaWallet } from "react-icons/fa";
+import { FaCreditCard, FaUniversity, FaMobileAlt } from "react-icons/fa";
 
 const Payment = () => {
   // Payment methods data
@@ -47,7 +47,7 @@ const Payment = () => {
         <Text fontSize="3xl" fontWeight="bold" mb="4">
           Secure Information
         </Text>
-        <Text fontSize="lg" mb="6" px="10">
+        <Text fontSize="sm" mb="6" px="10">
         We prioritize the security of your transactions. Our payment systems are encrypted and comply with the highest standards of security. Your personal and financial information is protected, ensuring a safe and secure donation process. We are committed to maintaining your trust and ensuring that your contributions are used effectively for the betterment of the community.        </Text>
 
         {/* Donation Button */}
@@ -56,8 +56,7 @@ const Payment = () => {
         color="white"
         size="lg" 
         padding="8"
-        paddingLeft="60"
-        paddingRight="60" 
+        width="70%"
         borderRadius="full"
       >
         Donate Now

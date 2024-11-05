@@ -33,7 +33,8 @@ const UpcomingEventsMobile = () => {
         {eventData.map((event, index) => (
           <Box
             key={index}
-            minWidth="250px"
+            minWidth="calc(50% - 16px)" // Adjust minWidth for two cards to fit with margin
+            maxWidth="calc(50% - 16px)" // Ensure maxWidth matches minWidth for consistency
             borderWidth="1px"
             borderRadius="10px"
             overflow="hidden"
@@ -45,7 +46,7 @@ const UpcomingEventsMobile = () => {
               <Text fontWeight="bold" textAlign="left" fontSize="md">
                 {event.title}
               </Text>
-              <Text fontSize="sm" textAlign="left">
+              <Text fontSize="xs" textAlign="left">
                 {event.description}
               </Text>
             </Box>

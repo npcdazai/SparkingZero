@@ -1,4 +1,4 @@
-import { Box, Text, SimpleGrid, Image} from "@chakra-ui/react";
+import { Box, Text, Flex, Image } from "@chakra-ui/react";
 
 const Explore = () => {
   const cardData = [
@@ -29,20 +29,38 @@ const Explore = () => {
       <Text fontSize="3xl" fontWeight="bold" mb="4" textAlign="left">
         Explore
       </Text>
-      <Text fontSize="2xl" mb="8" textAlign="left">
-        We are dedicated to providing spiritual guidance and services through our various rituals and ceremonies. Join us in celebrating and understanding our traditions.
+      <Text fontSize="xl" mb="8" textAlign="left">
+        We are dedicated to providing spiritual guidance and services through
+        our various rituals and ceremonies. Join us in celebrating and
+        understanding our traditions.
       </Text>
-      <SimpleGrid columns={[1, 2, 4]} spacing={10}>
-        {cardData.map((card, index) => (
-          <Box key={index} borderWidth="1px" borderRadius="20px" overflow="hidden" bg="white">
-            <Image src={card.imageUrl} alt={card.title} />
-            <Box padding="4">
-              <Text fontWeight="bold" textAlign="left">{card.title}</Text>
-              <Text fontSize="sm" textAlign="left">{card.description}</Text>
+      <Flex overflowX="scroll" paddingBottom="4">
+        <Flex>
+          {cardData.map((card, index) => (
+            <Box
+              key={index}
+              minWidth="calc(32% - 8px)" // Adjust minWidth for two cards to fit with margin
+              maxWidth="calc(32% - 8px)"
+              borderWidth="1px"
+              borderRadius="20px"
+              overflow="hidden"
+              bg="white"
+              
+              marginRight="4" // Space between cards
+            >
+              <Image src={card.imageUrl} alt={card.title} />
+              <Box padding="4">
+                <Text fontWeight="bold" textAlign="left">
+                  {card.title}
+                </Text>
+                <Text fontSize="sm" textAlign="left">
+                  {card.description}
+                </Text>
+              </Box>
             </Box>
-          </Box>
-        ))}
-      </SimpleGrid>
+          ))}
+        </Flex>
+      </Flex>
     </Box>
   );
 };

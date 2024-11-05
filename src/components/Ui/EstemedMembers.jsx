@@ -5,13 +5,8 @@ import {
   SimpleGrid,
   Text,
   VStack,
-  keyframes,
 } from "@chakra-ui/react";
 import React, { useState, useEffect } from "react";
-import diwali from "../../assets/Images/diwali.png";
-import navratri from "../../assets/Images/navratri.png";
-import community from "../../assets/Images/community.png";
-import evening from "../../assets/Images/evening.png";
 import slider1 from "../../assets/Images/members/images/mainbab.jpg";
 import slider2 from "../../assets/Images/members/images/person1.jpg";
 import slider3 from "../../assets/Images/members/images/pp3.jpg";
@@ -19,29 +14,16 @@ import slider4 from "../../assets/Images/members/images/pp4.jpg";
 import slider5 from "../../assets/Images/members/images/pp5.jpg";
 import slider6 from "../../assets/Images/members/images/pp6.jpg";
 import slider7 from "../../assets/Images/members/images/pp2.jpg";
-import bgImg from "../../assets/Images/freepik__upload__42474.jpeg";
 import freepik from "../../assets/logos/fix.png";
 
 const EstemedMembers = () => {
   const membersData = [
-    {
-      name: "Royal Rudra JI Maharaj",
-      role: "Renowned Scholar and Guide",
-      image: slider1,
-    },
-    {
-      name: "Acharya Atul Tiwari",
-      role: "प्रबंधक अध्यक्ष (Head Administrator)",
-      image: slider2,
-    },
+    { name: "Royal Rudra JI Maharaj", role: "Renowned Scholar and Guide", image: slider1 },
+    { name: "Acharya Atul Tiwari", role: "प्रबंधक अध्यक्ष (Head Administrator)", image: slider2 },
     { name: "Anand Tiwari", role: "कोषादायाछ (Treasurer)", image: slider3 },
     { name: "Shivam Tiwari", role: "धर्माचार्य (Media Head)", image: slider4 },
     { name: "Deepak Shukla", role: "Organisation minister", image: slider5 },
-    {
-      name: "Dhanesh Chandra Dubey",
-      role: "Organisation minister",
-      image: slider6,
-    },
+    { name: "Dhanesh Chandra Dubey", role: "Organisation minister", image: slider6 },
     { name: "Pradeep Tiwari", role: "Treasurer", image: slider7 },
   ];
 
@@ -72,7 +54,6 @@ const EstemedMembers = () => {
       w="100%"
       h="100%"
       overflow="hidden"
-      // border="1px solid #FF9500"
       position="relative"
       zIndex={1}
     >
@@ -85,7 +66,7 @@ const EstemedMembers = () => {
         position="absolute"
       />
       <Flex justify="center" w="100%">
-        <SimpleGrid columns={3} spacing={10}>
+        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing={10}>
           {visibleMembers.map((event, index) => (
             <VStack gap={4} key={index}>
               <Box
@@ -95,7 +76,7 @@ const EstemedMembers = () => {
                 boxShadow="md"
                 overflow="hidden"
               >
-                <Image h="100%" w="100%" src={event.image} alt={event.title} />
+                <Image h="100%" w="100%" src={event.image} alt={event.name} />
               </Box>
               <VStack
                 alignItems="center"
