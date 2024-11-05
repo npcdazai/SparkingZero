@@ -50,7 +50,7 @@ const EstemedMembers = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 3) % membersData.length);
-    }, 5000); 
+    }, 5000);
     return () => clearInterval(interval);
   }, [membersData.length]);
 
@@ -87,10 +87,10 @@ const EstemedMembers = () => {
       <Flex justify="center" w="100%">
         <SimpleGrid columns={3} spacing={10}>
           {visibleMembers.map((event, index) => (
-            <VStack key={index}>
+            <VStack gap={4} key={index}>
               <Box
-                h="280px"
-                w="280px"
+                h="180px"
+                w="180px"
                 borderRadius="50%"
                 boxShadow="md"
                 overflow="hidden"
@@ -104,13 +104,13 @@ const EstemedMembers = () => {
                 borderRadius="20px"
                 overflow="hidden"
                 bg="white"
-                w="250px"
+                w="200px"
               >
                 <Box padding="4">
-                  <Text fontWeight="bold" textAlign="left">
+                  <Text fontSize="small" fontWeight="bold" textAlign="left">
                     {event.name}
                   </Text>
-                  <Text fontSize="sm" textAlign="left">
+                  <Text fontSize="x-small" textAlign="left">
                     {event.role}
                   </Text>
                 </Box>

@@ -34,6 +34,12 @@ const Categories = () => {
           alignItems="center"
           mb="6"
           boxShadow="md"
+          transition="transform 0.3s, box-shadow 0.3s"
+          _hover={{
+            transform: "scale(1.02)",
+            boxShadow: "lg",
+            animation: "scaleUp 0.3s ease-in-out",
+          }}
         >
           {/* Image on the left side */}
           <Image
