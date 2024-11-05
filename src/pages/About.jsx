@@ -1,6 +1,7 @@
 import { Box, Image, Text, VStack } from "@chakra-ui/react";
 import eventbanner from "../assets/Images/eventbanner.png";
 import Belive from "../components/About/Belive";
+import RoadMap from "../components/About/RoadMap"
 const Events = () => {
   return (
     <Box p={4}>
@@ -42,6 +43,7 @@ const Events = () => {
       </VStack>
 
       <Belive/>
+      <RoadMap/>
     </Box>
   );
 };
