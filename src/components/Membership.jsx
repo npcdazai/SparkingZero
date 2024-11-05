@@ -19,7 +19,7 @@ const Membership = () => {
         color="white"
         size="lg" 
         padding="8"
-        width="100%"
+        width="60%"
         borderRadius="full"
       >
         Become a Member
