@@ -18,8 +18,27 @@ import lordGanesha from "../assets/Images/new_Images/LordGanesh.jpeg";
 import LordShiva from "../assets/Images/new_Images/LordShiva.jpeg";
 import temple from "../assets/Images/new_Images/finnal.png";
 import greenforest from "../assets/Images/greencow.png";
+import VanillaTilt from "vanilla-tilt";
+import { useEffect, useRef } from "react";
 
 function VedasSection() {
+  const tiltRef = useRef(null);
+  useEffect(() => {
+    const node = tiltRef.current;
+    if (node) {
+      VanillaTilt.init(node, {
+        max: 5,
+        speed: 400,
+        glare: true,
+        "max-glare": 0.5,
+      });
+    }
+    return () => {
+      if (node && node.vanillaTilt) {
+        node.vanillaTilt.destroy();
+      }
+    };
+  }, []);
   return (
     <Box
       //   bg="white"
@@ -35,7 +54,7 @@ function VedasSection() {
       h="100%"
     >
       {/* Left Image Section */}
-      <HStack flex="1" mb={{ base: 8, md: 0 }} w="50%">
+      <HStack ref={tiltRef} flex="1" mb={{ base: 8, md: 0 }} w="50%">
         <Image src={temple} />
       </HStack>
 

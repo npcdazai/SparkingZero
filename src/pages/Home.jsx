@@ -23,7 +23,7 @@ const Home = () => {
     <Box p={4}>
       <Carousel />
       <AboutUs />
-      <VedasSection/>
+      <VedasSection />
       <OurServices />
       <Members />
       <UpcomingEvents />
