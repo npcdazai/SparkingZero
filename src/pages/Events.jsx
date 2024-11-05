@@ -1,6 +1,7 @@
-import { Box, Button, Flex, Image, Text, VStack } from "@chakra-ui/react";
-import React from "react";
+import { Box, HStack, Image, Text, VStack } from "@chakra-ui/react";
 import eventbanner from "../assets/Images/eventbanner.png";
+import EventInfo from "../components/Events/EventInfo";
+import EventVital from "../components/Events/EventVital"
 const Events = () => {
   return (
     <Box p={4}>
@@ -10,9 +11,8 @@ const Events = () => {
         overflow="hidden"
         bg="gray.100"
         w="full"
-        h="400px"
-        alignItems="flex-start"
-        justifyContent="flex-end"
+        h="300px"
+        alignItems="center"
       >
         <Image src={eventbanner} position="absolute" w="100%" top={0} />
 
@@ -28,7 +28,7 @@ const Events = () => {
         >
           <Text
             as={"h1"}
-            fontSize="54px"
+            fontSize="x-large"
             fontWeight={"bold"}
             fontFamily={"Roca Two"}
             position={"relative"}
@@ -36,26 +36,7 @@ const Events = () => {
             bgColor="transparent"
             className="tiro-devanagari-hindi-regular"
           >
-            शिवशक्ति{" "}
-            <Text
-              className="tiro-devanagari-hindi-regular"
-              bgColor="transparent"
-              as={"span"}
-              color={"#ffff"}
-            >
-              कालका सनातन{" "}
-            </Text>
-            सेवा संस्था{" "}
-          </Text>
-
-          <Text
-            bgColor="transparent"
-            as={"span"}
-            fontSize="medium"
-            fontWeight={500}
-            className="tiro-devanagari-hindi-regular"
-          >
-            बिकईया धाम ज्ञानपुर-भदोही, उत्तर प्रदेश
+            Event
           </Text>
 
           <Text
@@ -69,6 +50,11 @@ const Events = () => {
           </Text>
         </Box>
       </VStack>
+
+      <HStack w="100%"alignItems="flex-start">
+        <VStack w="70%" h="800px" overflowY="scroll" ><EventInfo/></VStack>
+        <VStack w="30%"  ><EventVital/></VStack>
+      </HStack>
     </Box>
   );
 };

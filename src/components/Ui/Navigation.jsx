@@ -21,8 +21,8 @@ const tabs = [
   {
     id: 3,
     img: event,
-    title: "Service",
-    path: "/service",
+    title: "Event",
+    path: "/event",
   },
   {
     id: 4,
