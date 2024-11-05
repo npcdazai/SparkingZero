@@ -32,7 +32,7 @@ const AboutUs = () => {
       <Text fontSize="3xl" fontWeight="bold" mb="4" textAlign="left">
         About Us
       </Text>
-      <Text fontSize="2xl" mb="8" textAlign="left">
+      <Text fontSize="medium" mb="8" textAlign="left">
         We are dedicated to providing spiritual guidance and services through
         our various rituals and ceremonies. Join us in celebrating and
         understanding our traditions.
