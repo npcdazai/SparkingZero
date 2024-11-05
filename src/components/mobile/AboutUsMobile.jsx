@@ -37,12 +37,13 @@ const AboutUsMobile = () => {
         {cardData.map((card, index) => (
           <Box
             key={index}
-            minWidth="250px"
+            minWidth="calc(50% - 16px)" // Adjust minWidth for two cards to fit with margin
+            maxWidth="calc(50% - 16px)" // Ensure maxWidth matches minWidth for consistency
             borderWidth="1px"
             borderRadius="10px"
             overflow="hidden"
             bg="white"
-            mr="4"  // Add margin between cards
+            mr="4"  // Margin between cards
           >
             <Image src={card.imageUrl} alt={card.title} />
             <Box padding="4">

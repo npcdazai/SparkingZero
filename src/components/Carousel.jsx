@@ -1,10 +1,13 @@
 import { Box, Button, HStack } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import FirstCard from "./Ui/Cards/FirstCard";
-import SecondCard from "./Ui/Cards/Secondcardo";
-import ThirdCard from "./Ui/Cards/ThirdCardo"
+import SecondCard from "./Ui/Cards/SecondCardo";
+import ThirdCard from "./Ui/Cards/ThirdCardo";
 import offering from "../assets/Images/cowoffering.png";
 import coro from "../assets/Images/coro.png";
+
+const MotionBox = motion(Box);
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -14,20 +17,17 @@ const Carousel = () => {
     {
       title: "Pooja 1",
       description: "Description of Pooja 1",
-      imageUrl: "https://via.placeholder.com/600x300?text=Pooja+1",
       component: <FirstCard />,
     },
     {
       title: "Pooja 2",
       description: "Description of Pooja 2",
-      imageUrl: offering,
       component: <SecondCard />,
     },
     {
       title: "Pooja 3",
       description: "Description of Pooja 3",
-      imageUrl: coro,
-      component: <ThirdCard/>,
+      component: <ThirdCard />,
     },
   ];
 
@@ -53,16 +53,21 @@ const Carousel = () => {
       overflow="hidden"
       bg="gray.100"
       w="full"
-      h="400px"
+      h="400px" // Set a fixed height
     >
-      <Box
+      <MotionBox
+        key={currentIndex} // Ensure the box re-renders on index change
         textAlign="center"
         w="100%"
         h="100%"
-        position="relative"
+        position="absolute" // Position absolutely within the parent
+        initial={{ opacity: 0, y: 20 }} // Start with opacity 0 and translate down
+        animate={{ opacity: 1, y: 0 }} // Animate to full opacity and original position
+        exit={{ opacity: 0, y: -20 }} // Exit with opacity 0 and translate up
+        transition={{ duration: 0.5 }} // Duration for the animation
       >
         {items[currentIndex].component}
-      </Box>
+      </MotionBox>
 
       <Button
         position="absolute"

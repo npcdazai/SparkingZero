@@ -1,16 +1,13 @@
-import { Box, Button, Image, Text, VStack } from "@chakra-ui/react";
+import { Box, Button, Image, Text } from "@chakra-ui/react";
 import bannner1 from "../../../assets/Images/banner1.jpg";
 import OrangeBg from "../../../assets/images/greencow.png";
 import asset from "../../../assets/logos/fix.png";
 import offering from "../../../assets/Images/cows.png";
 import coro from "../../../assets/Images/coro.png";
+
 const SecondCard = () => {
   return (
     <Box
-      // bgGradient="linear(to-b, #F6B253, #FF9500)"
-      // bgImage={OrangeBg}
-      // bgSize="cover"
-      // bgRepeat="no-repeat"
       display="flex"
       flexDirection={{ base: "column", md: "row" }}
       justifyContent="space-between"
@@ -21,6 +18,7 @@ const SecondCard = () => {
       h="100%"
       borderRadius="20px"
       position="relative"
+      px={{ base: 4, md: 8 }} // Padding for different screen sizes
     >
       <Image
         bottom={0}
@@ -31,20 +29,19 @@ const SecondCard = () => {
       />
       <Box
         bgColor="transparent"
-        w="50%"
-        display={"flex"}
-        flexDirection={"column"}
+        w={{ base: "100%", md: "50%" }} // Full width on mobile, half width on larger screens
+        display="flex"
+        flexDirection="column"
         gap={6}
-        // justifyContent={"center"}
         p={4}
-        h={"100%"}
+        h="100%"
       >
         <Text
-          as={"h1"}
-          fontSize="54px"
-          fontWeight={"bold"}
-          fontFamily={"Roca Two"}
-          position={"relative"}
+          as="h1"
+          fontSize={{ base: "36px", md: "54px" }} // Responsive font size
+          fontWeight="bold"
+          fontFamily="Roca Two"
+          position="relative"
           color="#800000"
           bgColor="transparent"
           className="tiro-devanagari-hindi-regular"
@@ -53,8 +50,8 @@ const SecondCard = () => {
           <Text
             className="tiro-devanagari-hindi-regular"
             bgColor="transparent"
-            as={"span"}
-            color={"#333"}
+            as="span"
+            color="#333"
           >
             कालका सनातन{" "}
           </Text>
@@ -63,8 +60,8 @@ const SecondCard = () => {
 
         <Text
           bgColor="transparent"
-          as={"span"}
-          fontSize="medium"
+          as="span"
+          fontSize={{ base: "md", md: "lg" }} // Responsive font size
           fontWeight={500}
           className="tiro-devanagari-hindi-regular"
         >
@@ -73,22 +70,22 @@ const SecondCard = () => {
 
         <Box
           bgColor="transparent"
-          display={"flex"}
-          justifyContent={"center"}
-          flexDirection="row"
+          display="flex"
+          justifyContent="center"
+          flexDirection={{ base: "column", sm: "row" }} // Stack buttons on small screens
           gap={4}
         >
           <Button
-            display={"flex"}
-            alignItems={"center"}
+            display="flex"
+            alignItems="center"
             gap={3}
-            rounded={"full"}
-            color={"#fff"}
+            rounded="full"
+            color="#fff"
             px={8}
             py={4}
-            fontSize={"md"}
-            size={"lg"}
-            transition={"0.5s all"}
+            fontSize="md"
+            size="lg"
+            transition="0.5s all"
             bgColor="#800000"
             _hover={{
               bg: "#800000",
@@ -100,16 +97,16 @@ const SecondCard = () => {
           </Button>
 
           <Button
-            display={"flex"}
-            alignItems={"center"}
+            display="flex"
+            alignItems="center"
             gap={3}
-            rounded={"full"}
-            color={"#fff"}
+            rounded="full"
+            color="#fff"
             px={8}
             py={4}
-            fontSize={"md"}
-            size={"lg"}
-            transition={"0.5s all"}
+            fontSize="md"
+            size="lg"
+            transition="0.5s all"
             bgColor="#800000"
             _hover={{
               bg: "#800000",
@@ -123,9 +120,9 @@ const SecondCard = () => {
 
         <Text
           bgColor="transparent"
-          as={"span"}
-          fontSize={"1rem"}
-          color={"#fff"}
+          as="span"
+          fontSize={{ base: "1rem", md: "1.25rem" }} // Responsive font size
+          color="#fff"
           className="m-plus-rounded-1c-regular"
         >
           Jai kalka maa
@@ -137,10 +134,10 @@ const SecondCard = () => {
           clipPath: "polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%)",
         }}
         bg="tomato"
-        width="50%"
+        width={{ base: "100%", md: "50%" }} // Full width on mobile, half width on larger screens
         height="100%"
         overflow="hidden"
-        borderRadius={"md"}
+        borderRadius="md"
       >
         <Image src={offering} width="100%" height="100%" objectFit="cover" />
       </Box>

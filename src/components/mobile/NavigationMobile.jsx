@@ -1,4 +1,4 @@
-import { HStack, VStack, Image, Text } from "@chakra-ui/react";
+import { VStack, Image, Text } from "@chakra-ui/react";
 import { NavLink, useLocation } from "react-router-dom";
 import home from "../../assets/icons/home.png";
 import event from "../../assets/icons/events.png";
@@ -21,8 +21,8 @@ const tabs = [
   {
     id: 3,
     img: event,
-    title: "Service",
-    path: "/service",
+    title: "Event",
+    path: "/event",
   },
   {
     id: 4,
@@ -38,18 +38,18 @@ const tabs = [
   },
 ];
 
-const Navigation = () => {
+const NavigationMobile = () => {
   const location = useLocation();
 
   return (
-    <HStack bgColor="#fff" spacing={8} p={4}>
+    <VStack bgColor="#fff" spacing={4} p={4} align="stretch">
       {tabs.map((item, index) => (
         <NavLink
           key={item.id || index} // Ensure unique key by using index as a fallback
           to={item.path}
-          style={{ textDecoration: "none" }}
+          style={{ textDecoration: "none", width: "100%" }}
         >
-          <HStack
+          <VStack
             bgColor={location.pathname === item.path ? "#FCE8CC" : "transparent"}
             _hover={{ bgColor: "#FCE8CC", transform: "scale(1.05)" }}
             borderRadius="20px"
@@ -61,13 +61,13 @@ const Navigation = () => {
             <Image
               src={item.img}
               alt={item.title}
-              boxSize="20px"
+              boxSize="24px"
               filter={location.pathname === item.path ? "none" : "grayscale(100%)"}
               _hover={{ filter: "none" }}
               transition="filter 0.3s ease"
             />
             <Text
-              fontSize="small"
+              fontSize="medium"
               fontWeight="600"
               color={location.pathname === item.path ? "#FF9400" : "#000"}
               _hover={{ color: "#FF9400" }}
@@ -75,11 +75,11 @@ const Navigation = () => {
             >
               {item.title}
             </Text>
-          </HStack>
+          </VStack>
         </NavLink>
       ))}
-    </HStack>
+    </VStack>
   );
 };
 
-export default Navigation;
+export default NavigationMobile;
