@@ -52,20 +52,24 @@ const OurServices = () => {
             h="100%"
             transition="transform 0.3s, box-shadow 0.3s"
             _hover={{
+              // bgColor: "#FF9500",
+              // color:"#fff",
               transform: "scale(1.05)",
               boxShadow: "lg",
               animation: "scaleUp 0.3s ease-in-out",
             }}
           >
             <VStack alignItems="flex-start" w="100%">
-              <Icon as={service.icon} boxSize={10} color="orange.500" />
+              <Icon as={service.icon} boxSize={10} color="orange.500"/>
               <Text fontWeight="bold" fontSize="lg">
                 {service.title}
               </Text>
               <Text color="gray.600">{service.description}</Text>
               <HStack as="span">
-                <Text as="span" fontSize="x-small" color="orange.500">LEARN MORE </Text>
-                <Icon as={FaLongArrowAltRight} boxSize={7} color="orange.500" />
+                <Text as="span" fontSize="x-small"  >
+                  LEARN MORE{" "}
+                </Text>
+                <Icon as={FaLongArrowAltRight} boxSize={7} color="orange.500"/>
               </HStack>
             </VStack>
           </Box>

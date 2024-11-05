@@ -21,8 +21,8 @@ const tabs = [
   {
     id: 3,
     img: event,
-    title: "Event",
-    path: "/event",
+    title: "Service",
+    path: "/service",
   },
   {
     id: 4,
@@ -61,13 +61,13 @@ const Navigation = () => {
             <Image
               src={item.img}
               alt={item.title}
-              boxSize="24px"
+              boxSize="20px"
               filter={location.pathname === item.path ? "none" : "grayscale(100%)"}
               _hover={{ filter: "none" }}
               transition="filter 0.3s ease"
             />
             <Text
-              fontSize="medium"
+              fontSize="small"
               fontWeight="600"
               color={location.pathname === item.path ? "#FF9400" : "#000"}
               _hover={{ color: "#FF9400" }}
