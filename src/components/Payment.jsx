@@ -1,5 +1,5 @@
 import { Box, Text, SimpleGrid, Icon, Button } from "@chakra-ui/react";
-import { FaCreditCard, FaUniversity, FaMobileAlt, FaWallet } from "react-icons/fa";
+import { FaCreditCard, FaUniversity, FaMobileAlt } from "react-icons/fa";
 
 const Payment = () => {
   // Payment methods data
@@ -56,8 +56,7 @@ const Payment = () => {
         color="white"
         size="lg" 
         padding="8"
-        paddingLeft="60"
-        paddingRight="60" 
+        width="70%"
         borderRadius="full"
       >
         Donate Now
