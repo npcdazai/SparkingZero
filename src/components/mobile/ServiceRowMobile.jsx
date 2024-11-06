@@ -1,24 +1,25 @@
 import { Box, Flex, Text, Image } from "@chakra-ui/react";
-
+import pooja from "../../assets/Images/poojas.png"
+import cow from "../../assets/Images/cow.png"
 const ServicesRowMobile = () => {
   const serviceData = [
     {
-      title: "Pooja",
+      title: "Pooja", 
       description: "Various Pooja services offered.",
-      imageUrl: "https://via.placeholder.com/300x200?text=Diwali",
+      imageUrl: pooja,
     },
     {
-      title: "Programs",
+      title: "Cow Offering", 
       description: "Community programs for all.",
-      imageUrl: "https://via.placeholder.com/300x200?text=Navratri",
+      imageUrl: cow,
     },
     {
-      title: "Events",
+      title: "Events", 
       description: "Special events throughout the year.",
       imageUrl: "https://via.placeholder.com/300x200?text=Yoga",
     },
     {
-      title: "Education",
+      title: "Education", 
       description: "Educational sessions and workshops.",
       imageUrl: "https://via.placeholder.com/300x200?text=Cultural+Evening",
     },
@@ -33,7 +34,7 @@ const ServicesRowMobile = () => {
         {serviceData.map((service, index) => (
           <Box
             key={index}
-            minWidth="250px" // Minimum width for each card
+            minWidth="160px" // Minimum width for each card
             borderWidth="1px"
             borderRadius="20px"
             overflow="hidden"

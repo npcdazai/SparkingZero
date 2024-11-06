@@ -1,18 +1,19 @@
 import { Box, Text, Image, Flex } from "@chakra-ui/react";
 import { FaPray, FaCalendarAlt } from "react-icons/fa"; // Icons for each category
-
+import pooja from "../../assets/Images/circlepooja.png"
+import circle from "../../assets/Images/cicrclwfes.png"
 const CategoriesMobile = () => {
   const categories = [
     {
       title: "Pooja",
       description: "Description for Pooja",
-      imageUrl: "https://via.placeholder.com/100?text=Pooja",
+      imageUrl: pooja,
       icon: FaPray,
     },
     {
       title: "Festival",
       description: "Description for Festival",
-      imageUrl: "https://via.placeholder.com/100?text=Festival",
+      imageUrl: circle,
       icon: FaCalendarAlt,
     },
   ];
