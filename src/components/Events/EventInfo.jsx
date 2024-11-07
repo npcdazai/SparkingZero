@@ -4,6 +4,8 @@ import parsad from "../../assets/Images/new_Images/parsadevent.jpg";
 import marraige from "../../assets/Images/new_Images/marriage.jpg";
 import { CiClock1 } from "react-icons/ci";
 import { IoLocationSharp } from "react-icons/io5";
+import { AspectRatio } from "@chakra-ui/react";
+import mahaparsad from "../../assets/Videos/test.mp4";
 
 const EventInfo = () => {
   const info = [
@@ -50,13 +52,20 @@ const EventInfo = () => {
           <Box
             h="300px"
             overflow="hidden"
+            transform="scale(1.05)"
             transition="transform 0.3s, box-shadow 0.3s"
             _hover={{
-              transform: "scale(1.05)",
+              // transform: "scale(1.05)",
               boxShadow: "lg",
             }}
           >
-            <Image src={event.img} w="100%" h="100%" objectFit="cover" />
+            {/* <Image src={event.img} w="100%" h="100%" objectFit="cover" /> */}
+            <AspectRatio
+              bg="bg.muted"
+              ratio={16 / 9}
+            >
+              <iframe title="ngo-vid" src={mahaparsad} allowFullScreen />
+            </AspectRatio>
           </Box>
           <Box p={4}>
             <Text

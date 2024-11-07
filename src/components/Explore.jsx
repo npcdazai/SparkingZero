@@ -34,13 +34,13 @@ const Explore = () => {
         our various rituals and ceremonies. Join us in celebrating and
         understanding our traditions.
       </Text>
-      <Flex overflowX="scroll" paddingBottom="4">
+      <Flex paddingBottom="4">
         <Flex>
           {cardData.map((card, index) => (
             <Box
               key={index}
-              minWidth="calc(32% - 8px)" // Adjust minWidth for two cards to fit with margin
-              maxWidth="calc(32% - 8px)"
+              minWidth="calc(30% - 8px)"
+              maxWidth="calc(30% - 8px)"
               borderWidth="1px"
               borderRadius="20px"
               overflow="hidden"

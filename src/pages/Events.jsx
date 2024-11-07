@@ -1,7 +1,7 @@
 import { Box, HStack, Image, Text, VStack } from "@chakra-ui/react";
 import eventbanner from "../assets/Images/eventbanner.png";
 import EventInfo from "../components/Events/EventInfo";
-import EventVital from "../components/Events/EventVital"
+import EventVital from "../components/Events/EventVital";
 const Events = () => {
   return (
     <Box p={4}>
@@ -13,12 +13,14 @@ const Events = () => {
         w="full"
         h="300px"
         alignItems="center"
+        bgImage={eventbanner}
+        bgSize={"cover"}
+        p={8}
+        mb={8}
       >
-        <Image src={eventbanner} position="absolute" w="100%" top={0} />
-
         <Box
           bgColor="transparent"
-          w="50%"
+          w="100%"
           display={"flex"}
           flexDirection={"column"}
           gap={6}
@@ -51,9 +53,13 @@ const Events = () => {
         </Box>
       </VStack>
 
-      <HStack w="100%"alignItems="flex-start">
-        <VStack w="70%" h="800px" overflowY="scroll" ><EventInfo/></VStack>
-        <VStack w="30%"  ><EventVital/></VStack>
+      <HStack w="100%" alignItems="flex-start">
+        <VStack w="70%" h="800px" overflowY="scroll">
+          <EventInfo />
+        </VStack>
+        <VStack w="30%">
+          <EventVital />
+        </VStack>
       </HStack>
     </Box>
   );

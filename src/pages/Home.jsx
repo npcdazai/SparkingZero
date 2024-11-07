@@ -19,13 +19,10 @@ import ServicesRowMobile from "../components/mobile/ServiceRowMobile";
 import UpcomingEventsMobile from "../components/mobile/UpComingEventsMobile";
 import HeaderMobile from "../components/mobile/HeaderMobile";
 import Header from "../components/Ui/Header";
+import MobileVedSakti from "../components/mobile/MobileVedSakti"
 
 const Home = () => {
-  // const test = useBreakpointValue ({
-  //   base : <h1 style={{color:"black"}}>Noggas</h1>, //mobile
-  //   lg : <h1 style={{color:"red"}}>Noggers</h1> ,//desk
-  //   md : <h1 style={{color:"yellow"}}>Niggers</h1> //tablet
-  // })
+
   const AboutUsComponent = useBreakpointValue({
     base: <AboutUsMobile />,
     lg: <AboutUs />,
@@ -52,13 +49,18 @@ const Home = () => {
     lg: <UpcomingEvents />,
   });
   
+  const Vedsak = useBreakpointValue({
+    base: <MobileVedSakti />,
+    lg: <VedasSection />,
+  });
+  
   
 
   return (
     <Box p={4}>
       <Carousel />
       {AboutUsComponent}
-      <VedasSection />
+      {Vedsak}
       <OurServices />
       {UpcomingEventsComponent}
       {DonationComponent}

@@ -1,5 +1,14 @@
-import { Box, Avatar, Heading, Text, Stack, Icon, Link } from '@chakra-ui/react';
-import { FaLinkedin, FaTwitter, FaFacebook, FaGithub } from 'react-icons/fa';
+import {
+  Box,
+  Avatar,
+  Heading,
+  Text,
+  Stack,
+  Icon,
+  Link,
+} from "@chakra-ui/react";
+import { FaLinkedin, FaTwitter, FaFacebook, FaGithub } from "react-icons/fa";
+import slider1 from "../../assets/Images/members/images/mainbab.jpg";
 
 function AboutMeCard() {
   return (
@@ -15,18 +24,13 @@ function AboutMeCard() {
       <Heading as="h3" size="md" mb={2} color="red.500">
         About Me
       </Heading>
-      <Avatar
-        size="xl"
-        name="Rosalina D. Wiliamson"
-        src="https://via.placeholder.com/150" // Replace with the actual image URL
-        mb={4}
-      />
+      <Avatar size="xl" name="Rosalina D. Wiliamson" src={slider1} mb={4} />
       <Heading as="h4" size="lg" mb={2}>
-        Rosalina D. Wiliamson
+        Royal Rudra JI Maharaj
       </Heading>
       <Text mb={4}>
-        Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Donec sollicitudin
-        molestie malesuada. Mauris blandit aliquet elit
+        Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.
+        Donec sollicitudin molestie malesuada. Mauris blandit aliquet elit
       </Text>
       <Stack direction="row" justify="center" spacing={4}>
         <Link href="https://linkedin.com" isExternal>

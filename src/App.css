@@ -32,3 +32,29 @@ body {
   font-weight: 400;
   font-style: normal;
 }
+
+
+/* Targeting the entire scrollbar */
+::-webkit-scrollbar {
+  width: 10px;  /* Width of the scrollbar */
+  height: 5px; /* Height of the scrollbar (for horizontal scrollbars) */
+}
+
+/* Scrollbar track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;   /* Color of the scrollbar track */
+  border-radius: 10px;   /* Optional: round corners */
+}
+
+/* Scrollbar handle (thumb) */
+::-webkit-scrollbar-thumb {
+  background-color: #F6B253; /* Color of the scrollbar thumb */
+  border-radius: 10px;    /* Optional: round corners */
+  border: 2px solid #f1f1f1; /* Optional: gives padding around thumb */
+}
+
+/* Scrollbar thumb hover */
+::-webkit-scrollbar-thumb:hover {
+  background-color: #FF9500; /* Color on hover */
+}
+
