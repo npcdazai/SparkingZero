@@ -8,6 +8,7 @@ import About from "./pages/About";
 import HeaderMobile from "./components/mobile/HeaderMobile";
 import Footer from "./pages/Footer";
 import FooterCom from "./pages/FooterCom";
+import TypesOfPooja from "./pages/TypesOfPooja";
 function App() {
   const HeaderComponent = useBreakpointValue({
     base: <HeaderMobile />,
@@ -21,6 +22,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About/>}/>
           <Route path="/event" element={<Event />} />
+          <Route path="/pooja" element={<TypesOfPooja />} />
         </Routes>
         <FooterCom/>
         <Footer/>
