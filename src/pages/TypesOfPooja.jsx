@@ -2,7 +2,9 @@ import { Box, Image, Heading, Text, VStack, SimpleGrid } from "@chakra-ui/react"
 import templeImage from "../assets/Images/poojas.png";
 import ganeshPoojaImage from "../assets/Images/ganesh-pooja.jpg";
 import lakshmiPoojaImage from "../assets/Images/lakshmi-pooja.jpg";
+import hanumanPoojaImage from "../assets/Images/hanuman-pooja.jpg";
 import navagrahaPoojaImage from "../assets/Images/navagraha-pooja.jpg";
+import ShivaPoojaImage from "../assets/Images/shiv-pooja.jpg";
 import specialPoojaImage from "../assets/Images/saraswati-pooja.jpg"; // Example images for poojas
 
 const TypesOfPooja = () => {
@@ -13,8 +15,8 @@ const TypesOfPooja = () => {
     { name: "Saraswati Pooja", image: specialPoojaImage },
     // Additional poojas
     { name: "Durga Pooja", image: ganeshPoojaImage },
-    { name: "Shiva Pooja", image: lakshmiPoojaImage },
-    { name: "Hanuman Pooja", image: navagrahaPoojaImage },
+    { name: "Shiva Pooja", image: ShivaPoojaImage },
+    { name: "Hanuman Pooja", image: hanumanPoojaImage },
     { name: "Vishnu Pooja", image: specialPoojaImage },
   ];
 
