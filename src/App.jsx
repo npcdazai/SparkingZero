@@ -1,17 +1,29 @@
 import "./App.css";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Box, useBreakpointValue } from "@chakra-ui/react";
 import Home from "./pages/Home";
-import Header from "./Components/Header";
-import { Box } from "@chakra-ui/react";
-
+import Header from "./components/Ui/Header";
+import Event from "./pages/Events"
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import About from "./pages/About";
+import HeaderMobile from "./components/mobile/HeaderMobile";
+import Footer from "./pages/Footer";
+import FooterCom from "./pages/FooterCom";
 function App() {
+  const HeaderComponent = useBreakpointValue({
+    base: <HeaderMobile />,
+    lg: <Header />,
+  });
   return (
-    <Box bgColor="#F3F3F9">
+    <Box>
       <BrowserRouter>
-        <Header />
+        {HeaderComponent}
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About/>}/>
+          <Route path="/event" element={<Event />} />
         </Routes>
+        <FooterCom/>
+        <Footer/>
       </BrowserRouter>
     </Box>
   );
