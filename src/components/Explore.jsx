@@ -39,14 +39,12 @@ const Explore = () => {
           {cardData.map((card, index) => (
             <Box
               key={index}
-              minWidth="calc(30% - 8px)"
-              maxWidth="calc(30% - 8px)"
+              gap={4}
               borderWidth="1px"
               borderRadius="20px"
               overflow="hidden"
               bg="white"
-              
-              marginRight="4" // Space between cards
+              marginRight="2rem"
             >
               <Image src={card.imageUrl} alt={card.title} />
               <Box padding="4">

@@ -20,8 +20,9 @@ import member17 from "../assets/images/members/images/Suraj.jpg";
 import member18 from "../assets/images/members/images/Syam.jpg";
 import member19 from "../assets/images/members/images/Sanjay.jpg";
 import member20 from "../assets/images/members/images/dinesh.jpg";
-
-import { Box } from "@chakra-ui/react";
+import eventbanner from "../assets/Images/eventbanner.png";
+import Explore from "../components/Explore";
+import { Box, Text, VStack } from "@chakra-ui/react";
 
 const membersData = [
   {
@@ -128,7 +129,54 @@ const membersData = [
 
 const AllMembers = () => {
   return (
-    <Box p={4} display="flex" flexWrap="wrap" gap={6} bgColor="#fffaf0">
+    <Box p={4} display="flex" flexWrap="wrap" bgColor="#fffaf0">
+      <VStack
+        position="relative"
+        borderRadius="20px"
+        overflow="hidden"
+        bg="gray.100"
+        w="full"
+        h="300px"
+        alignItems="center"
+        bgImage={eventbanner}
+        bgSize={"cover"}
+        p={8}
+        mb={8}
+      >
+        <Box
+          bgColor="transparent"
+          w="100%"
+          display={"flex"}
+          flexDirection={"column"}
+          gap={6}
+          // justifyContent={"center"}
+          p={4}
+          h={"100%"}
+        >
+          <Text
+            as={"h1"}
+            fontSize="x-large"
+            fontWeight={"bold"}
+            fontFamily={"Roca Two"}
+            position={"relative"}
+            color="#fff"
+            bgColor="transparent"
+            className="tiro-devanagari-hindi-regular"
+          >
+            Volunters
+          </Text>
+
+          <Text
+            bgColor="transparent"
+            as={"span"}
+            fontSize={"1rem"}
+            color={"#fff"}
+            className="m-plus-rounded-1c-regular"
+          >
+            Jai kalka maa
+          </Text>
+        </Box>
+      </VStack>
       {membersData.map((val, index) => {
         return (
           <Box key={index}>
@@ -136,6 +184,7 @@ const AllMembers = () => {
           </Box>
         );
       })}
+      <Explore/>
     </Box>
   );
 };

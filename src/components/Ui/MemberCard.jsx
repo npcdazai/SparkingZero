@@ -37,7 +37,7 @@ const MembersCards = ({ img, name, role }) => {
         boxShadow="lg"
         />
       </Box>
-      <Text fontWeight="500" fontSize="lg" color="#800000">
+      <Text fontWeight="500" fontSize="lg" color="#FF9400">
         {name}
       </Text>
       <Text fontWeight="300" fontSize="md" color="#333">
