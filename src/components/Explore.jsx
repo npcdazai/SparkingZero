@@ -43,7 +43,7 @@ const Explore = () => {
               borderWidth="1px"
               borderRadius="20px"
               overflow="hidden"
-              bg="white"
+              bg="white"  
               marginRight="2rem"
             >
               <Image src={card.imageUrl} alt={card.title} />

@@ -1,37 +1,19 @@
-import { Box, SimpleGrid, Text, Image } from "@chakra-ui/react";
+import { Box, SimpleGrid, Text, Image, VStack } from "@chakra-ui/react";
 import pooja from "../assets/Images/poojas.png"
 import cow from "../assets/Images/cow.png"
-const ServicesRow = () => {
-  const serviceData = [
-    {
-      title: "Pooja", 
-      description: "Various Pooja services offered.",
-      imageUrl: pooja,
-    },
-    {
-      title: "Cow Offering", 
-      description: "Community programs for all.",
-      imageUrl: cow,
-    },
-    {
-      title: "Events", 
-      description: "Special events throughout the year.",
-      imageUrl: "https://via.placeholder.com/300x200?text=Yoga",
-    },
-    {
-      title: "Education", 
-      description: "Educational sessions and workshops.",
-      imageUrl: "https://via.placeholder.com/300x200?text=Cultural+Evening",
-    },
-  ];
+const ServicesRow = ({des,title,arr}) => {
+
 
   return (
     <Box marginTop="10" padding="4" bg="gray.50">
-      <Text fontSize="3xl" fontWeight="bold" mb="4" textAlign="left">
-        Our Services
+     <VStack mb={6} alignItems="flex-start">
+     <Text fontSize="2xl" fontWeight="bold" mb="4" textAlign="left">
+       {title}
       </Text>
+      <Text fontSize="medium" color="261501">{des}</Text>
+     </VStack>
       <SimpleGrid columns={[1, 2, 4]} spacing={10}>
-        {serviceData.map((service, index) => (
+        {arr.map((service, index) => (
           <Box key={index} borderWidth="1px" borderRadius="20px" overflow="hidden" bg="white">
               <Box
               h="180.34"

@@ -12,35 +12,15 @@ import { MdPeopleAlt, MdEvent } from "react-icons/md";
 import { GiPrayer } from "react-icons/gi";
 import { FaLongArrowAltRight } from "react-icons/fa";
 
-const OurServices = () => {
-  const services = [
-    {
-      icon: GiPrayer,
-      title: "Pooja",
-      description: "Various Pooja services offered.",
-    },
-    {
-      icon: MdPeopleAlt,
-      title: "Programs",
-      description: "Community programs for all.",
-    },
-    {
-      icon: MdEvent,
-      title: "Events",
-      description: "Special events throughout the year.",
-    },
-    {
-      icon: FaGraduationCap,
-      title: "Education",
-      description: "Educational sessions and workshops.",
-    },
-  ];
+const OurServices = ({title , des,  arr}) => {
+
 
   return (
     <Box textAlign="left" p={8} w="100%">
-      <Heading mb={6}>Our Services</Heading>
+      <Heading mb={6}>{title}</Heading>
+      <Text as={"p"} fontSize="small">{des}</Text>
       <SimpleGrid columns={{ base: 1, lg: 4 }} spacing={8} w="100%">
-        {services.map((service, index) => (
+        {arr.map((service, index) => (
           <Box
             key={index}
             borderWidth="1px"

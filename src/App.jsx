@@ -9,6 +9,7 @@ import HeaderMobile from "./components/mobile/HeaderMobile";
 import Footer from "./pages/Footer";
 import FooterCom from "./pages/FooterCom";
 import AllMembers from "./pages/AllMembers";
+import CowOffering from "./pages/CowOffering";
 function App() {
   const HeaderComponent = useBreakpointValue({
     base: <HeaderMobile />,
@@ -23,6 +24,7 @@ function App() {
           <Route path="/about" element={<About/>}/>
           <Route path="/event" element={<Event />} />
           <Route path="/members" element={<AllMembers />} />
+          <Route path="/cow-offering" element={<CowOffering/>}/>
         </Routes>
         <FooterCom/>
         <Footer/>

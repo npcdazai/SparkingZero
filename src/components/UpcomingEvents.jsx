@@ -3,7 +3,7 @@ import diwali from "../assets/Images/diwali.png";
 import navratri from "../assets/Images/navratri.png";
 import community from "../assets/Images/community.png";
 import evening from "../assets/Images/evening.png";
-
+import kalash from "../assets/Images/new_Images/kalsh.png";
 const UpcomingEvents = () => {
   const eventData = [
     {
@@ -78,8 +78,10 @@ const UpcomingEvents = () => {
                 alignItems="center"
                 justifyContent="center"
                 _hover={{ opacity: 1 }}
+                flexDirection="column"
               >
-                <Text color="white" fontSize="lg" fontWeight="bold">
+                <Image h="100px" src={kalash} />
+                <Text as="span" color="white" fontSize="sm" fontWeight="bold">
                   Learn More
                 </Text>
               </Box>

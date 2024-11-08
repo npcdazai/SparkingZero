@@ -3,6 +3,7 @@ import pooja from "../assets/Images/pooja.png";
 import diwali from "../assets/Images/diwali.png";
 import program from "../assets/Images/program.png";
 import event from "../assets/Images/event.png";
+import kalash from "../assets/Images/new_Images/kalsh.png";
 const AboutUs = () => {
   const cardData = [
     {
@@ -77,11 +78,13 @@ const AboutUs = () => {
                 opacity="0"
                 transition="opacity 0.3s ease-in-out"
                 display="flex"
+                flexDirection="column"
                 alignItems="center"
                 justifyContent="center"
                 _hover={{ opacity: 1 }}
               >
-                <Text color="white" fontSize="lg" fontWeight="bold">
+                <Image h="100px" src={kalash} />
+                <Text as="span" color="white" fontSize="sm" fontWeight="bold">
                   Learn More
                 </Text>
               </Box>
