@@ -103,13 +103,13 @@ const BookPooja = () => {
             <FormLabel>Name</FormLabel>
             <Box
               p={4}
-              borderRadius="40px" // More rounded corners
+              borderRadius="40px" 
               bg="white"
               w="100%"
             >
               <Input
                 type="text"
-                placeholder="Enter your name" // Placeholder text
+                placeholder="Enter your name" 
                 {...register("name", { required: true })}
                 border="none"
                 focusBorderColor="none"
@@ -122,7 +122,7 @@ const BookPooja = () => {
             <FormLabel>Date of Pooja</FormLabel>
             <Box
               p={4}
-              borderRadius="40px" // More rounded corners
+              borderRadius="40px" 
               bg="white"
               w="100%"
             >
@@ -141,12 +141,12 @@ const BookPooja = () => {
             <FormLabel>Time Slot</FormLabel>
             <Box
               p={4}
-              borderRadius="40px" // More rounded corners
+              borderRadius="40px" 
               bg="white"
               w="100%"
             >
               <Select
-                placeholder="Select a time slot" // Placeholder for dropdown
+                placeholder="Select a time slot" 
                 {...register("timeSlot", { required: true })}
                 border="none"
                 focusBorderColor="none"
@@ -163,7 +163,7 @@ const BookPooja = () => {
             <FormLabel>Email Address</FormLabel>
             <Box
               p={4}
-              borderRadius="40px" // More rounded corners
+              borderRadius="40px" 
               bg="white"
               w="100%"
             >
@@ -182,7 +182,7 @@ const BookPooja = () => {
             <FormLabel>Phone Number</FormLabel>
             <Box
               p={4}
-              borderRadius="40px" // More rounded corners
+              borderRadius="40px" 
               bg="white"
               w="100%"
             >
