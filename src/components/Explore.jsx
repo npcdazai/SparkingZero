@@ -1,26 +1,29 @@
 import { Box, Text, Flex, Image } from "@chakra-ui/react";
-
+import pooja from "../assets/Images/pooja.png";
+import diwali from "../assets/Images/diwali.png";
+import program from "../assets/Images/program.png";
+import event from "../assets/Images/event.png";
 const Explore = () => {
   const cardData = [
     {
       title: "Pooja",
       description: "Description for Pooja",
-      imageUrl: "https://via.placeholder.com/300x200?text=Pooja",
+      imageUrl: pooja,
     },
     {
       title: "Festival",
       description: "Description for Festival",
-      imageUrl: "https://via.placeholder.com/300x200?text=Festival",
+      imageUrl: diwali,
     },
     {
-      title: "Ceremony",
+      title: "Program",
       description: "Description for Ceremony",
-      imageUrl: "https://via.placeholder.com/300x200?text=Ceremony",
+      imageUrl: program,
     },
     {
       title: "Event",
       description: "Description for Event",
-      imageUrl: "https://via.placeholder.com/300x200?text=Event",
+      imageUrl: event,
     },
   ];
 

@@ -1,46 +1,13 @@
 import { Box, Text, SimpleGrid, Image } from "@chakra-ui/react";
-import pooja from "../assets/Images/pooja.png";
-import diwali from "../assets/Images/diwali.png";
-import program from "../assets/Images/program.png";
-import event from "../assets/Images/event.png";
-import kalash from "../assets/Images/new_Images/kalsh.png";
+import kalash from "../../assets/Images/new_Images/kalsh.png";
 import { NavLink } from "react-router-dom";
-const AboutUs = () => {
-  const cardData = [
-    {
-      title: "Pooja",
-      description: "Description for Pooja",
-      imageUrl: pooja,
-      link: "/pooja",
-    },
-    {
-      title: "Festival",
-      description: "Description for Festival",
-      imageUrl: diwali,
-    },
-    {
-      title: "Program",
-      description: "Description for Ceremony",
-      imageUrl: program,
-    },
-    {
-      title: "Event",
-      description: "Description for Event",
-      imageUrl: event,
-    },
-  ];
+
+
+const CommonCard = ({cardData}) => {
 
   return (
-    <Box marginTop="10" padding="4" bg="gray.50">
-      <Text fontSize="3xl" fontWeight="bold" mb="4" textAlign="left">
-        About Us
-      </Text>
-      <Text fontSize="medium" mb="8" textAlign="left">
-        We are dedicated to providing spiritual guidance and services through
-        our various rituals and ceremonies. Join us in celebrating and
-        understanding our traditions.
-      </Text>
-      <SimpleGrid columns={[1, 2, 4]} spacing={10}>
+    <Box marginTop={4} padding="4" bg="gray.50">
+      <SimpleGrid columns={[3]} spacing={10}>
         {cardData.map((card, index) => (
           <Box
             key={index}
@@ -109,4 +76,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs;
+export default CommonCard;

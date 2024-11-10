@@ -8,7 +8,7 @@ import {
   Link,
 } from "@chakra-ui/react";
 import { FaLinkedin, FaTwitter, FaFacebook, FaGithub } from "react-icons/fa";
-import slider1 from "../../assets/Images/members/images/mainbab.jpg";
+import slider1 from "../../assets/Images/members/images/person1.jpg";
 
 function AboutMeCard() {
   return (
@@ -26,7 +26,7 @@ function AboutMeCard() {
       </Heading>
       <Avatar size="xl" name="Rosalina D. Wiliamson" src={slider1} mb={4} />
       <Heading as="h4" size="lg" mb={2}>
-        Royal Rudra JI Maharaj
+        Acharya Atul Tiwari
       </Heading>
       <Text mb={4}>
         Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.

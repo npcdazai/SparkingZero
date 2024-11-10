@@ -8,6 +8,9 @@ import About from "./pages/About";
 import HeaderMobile from "./components/mobile/HeaderMobile";
 import Footer from "./pages/Footer";
 import FooterCom from "./pages/FooterCom";
+import TypesOfPooja from "./pages/TypesOfPooja";
+import PoojaOffering from "./pages/PoojaOffering";
+import BookPooja from "./pages/BookPooja";
 import AllMembers from "./pages/AllMembers";
 import CowOffering from "./pages/CowOffering";
 function App() {
@@ -23,6 +26,9 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About/>}/>
           <Route path="/event" element={<Event />} />
+          <Route path="/pooja" element={<TypesOfPooja />} />
+          <Route path="/book-pooja" element={<BookPooja />} />
+          <Route path="/pooja-offering" element={<PoojaOffering />} />
           <Route path="/members" element={<AllMembers />} />
           <Route path="/cow-offering" element={<CowOffering/>}/>
         </Routes>

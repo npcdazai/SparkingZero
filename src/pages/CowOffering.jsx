@@ -175,7 +175,7 @@ const CowOffering = () => {
           </Text>
         </VStack>
         <Image src={thickLine} />
-        <Text w="50%" textAlign="start" color="#db4242" fontSize="medium">
+        <Text w="50%" textAlign="start" color="#db4242" fontWeight={600} fontSize="medium">
           Our mission is to share the Good of Hinduism, Loving, Faith and
           Serving. People ask questions related to Hinduism.
         </Text>

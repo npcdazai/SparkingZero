@@ -45,7 +45,7 @@ const Navigation = () => {
     <HStack bgColor="#fff" spacing={8} p={4}>
       {tabs.map((item, index) => (
         <NavLink
-          key={item.id || index} // Ensure unique key by using index as a fallback
+          key={item.id || index} 
           to={item.path}
           style={{ textDecoration: "none" }}
         >

@@ -1,26 +1,31 @@
 import { Box, Text, Image, Flex } from "@chakra-ui/react";
-
+import diwali from "../../assets/Images/diwali.png";
+import navratri from "../../assets/Images/navratri.png";
+import community from "../../assets/Images/community.png";
+import evening from "../../assets/Images/evening.png";
 const UpcomingEventsMobile = () => {
   const eventData = [
     {
       title: "Diwali Celebration",
-      description: "Join us for a grand Diwali celebration with fireworks and festivities.",
-      imageUrl: "https://via.placeholder.com/300x200?text=Diwali",
+      description:
+        "Join us for a grand Diwali celebration with fireworks and festivities.",
+      imageUrl: diwali,
     },
     {
       title: "Navratri Festival",
       description: "Nine nights of worship and dance to celebrate Navratri.",
-      imageUrl: "https://via.placeholder.com/300x200?text=Navratri",
+      imageUrl: navratri,
     },
     {
-      title: "Community Yoga",
+      title: "Community Service",
       description: "Weekly yoga sessions for wellness and mindfulness.",
-      imageUrl: "https://via.placeholder.com/300x200?text=Yoga",
+      imageUrl: community,
     },
     {
       title: "Cultural Evening",
-      description: "An evening of music and dance performances by local artists.",
-      imageUrl: "https://via.placeholder.com/300x200?text=Cultural+Evening",
+      description:
+        "An evening of music and dance performances by local artists.",
+      imageUrl: evening,
     },
   ];
 

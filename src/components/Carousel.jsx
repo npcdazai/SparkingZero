@@ -4,13 +4,12 @@ import { motion } from "framer-motion";
 import FirstCard from "./Ui/Cards/FirstCard";
 import SecondCard from "./Ui/Cards/SecondCardo";
 import ThirdCard from "./Ui/Cards/ThirdCardo";
-import offering from "../assets/Images/cowoffering.png";
-import coro from "../assets/Images/coro.png";
 
 const MotionBox = motion(Box);
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [direction, setDirection] = useState(1); // 1 for next, -1 for previous
   const intervalTime = 10000;
 
   const items = [
@@ -32,10 +31,12 @@ const Carousel = () => {
   ];
 
   const nextSlide = () => {
+    setDirection(1); // Move right
     setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
   };
 
   const prevSlide = () => {
+    setDirection(-1); // Move left
     setCurrentIndex((prevIndex) => (prevIndex - 1 + items.length) % items.length);
   };
 
@@ -61,9 +62,9 @@ const Carousel = () => {
         w="100%"
         h="100%"
         position="absolute" // Position absolutely within the parent
-        initial={{ opacity: 0, y: 20 }} // Start with opacity 0 and translate down
-        animate={{ opacity: 1, y: 0 }} // Animate to full opacity and original position
-        exit={{ opacity: 0, y: -20 }} // Exit with opacity 0 and translate up
+        initial={{ opacity: 0, x: direction === 1 ? 100 : -100 }} // Start with opacity 0 and move from left or right
+        animate={{ opacity: 1, x: 0 }} // Animate to full opacity and the center position
+        exit={{ opacity: 0, x: direction === 1 ? -100 : 100 }} // Exit to the opposite direction
         transition={{ duration: 0.5 }} // Duration for the animation
       >
         {items[currentIndex].component}
