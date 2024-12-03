@@ -14,8 +14,8 @@ const AllMembers = () => {
   useEffect(() => {
     const fetchMembers = async () => {
       try {
-        const response = await axios.get("/api/members"); // Now this will be relative to the base URL
-        setMembersData(response.data); // Set the members data from the API
+        const response = await axios.get("/api/members"); 
+        setMembersData(response.data); 
         setLoading(false); // Turn off loading once data is fetched
       } catch (error) {
         console.error("Error fetching members:", error);

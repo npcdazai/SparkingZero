@@ -3,7 +3,8 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const memberRoutes = require("./routes/memberRoutes");  // <-- Add this line
-
+const poojaRoutes = require("./routes/poojaRoutes");
+const poojaBookingsRoutes = require("./routes/poojaBookingRoutes");
 dotenv.config();
 
 const app = express();
@@ -27,6 +28,10 @@ app.get("/", (req, res) => {
 
 // Routes
 app.use('/api', memberRoutes);
+app.use('/api', poojaRoutes);
+app.use('/api/poojaBookings', poojaBookingsRoutes);
+
+
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

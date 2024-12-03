@@ -1,51 +1,47 @@
-import {
-  Box,
-  Image,
-  Heading,
-  Text,
-  VStack,
-  SimpleGrid,
-} from "@chakra-ui/react";
+import React, { useState, useEffect } from "react";
+import { Box, Image, Heading, Text, Spinner } from "@chakra-ui/react";
+import axios from "axios";
 import templeImage from "../assets/Images/poojas.png";
-
-import ganeshpuja from "../assets/Images/Poojas/ganeshpuja.png";
-import laximpuja from "../assets/Images/Poojas/laximpuja.png";
-import puja from "../assets/Images/Poojas/puja.png";
-import saraswatipuja from "../assets/Images/Poojas/Saraswatipuja.png";
-import humanpuja from "../assets/Images/Poojas/humanpuja.png";
-import shivpuja from "../assets/Images/Poojas/shivpuja.png";
 import CommonCard from "../components/Ui/CommonCard";
 
-const cardData = [
-  {
-    title: "Ganesh Pooja",
-    imageUrl: ganeshpuja,
-    link: "/pooja-offering",
-  },
-  {
-    title: "Laxim Pooja",
-    imageUrl: laximpuja,
-    link: "/pooja-offering",
-  },
-  {
-    title: "Saraswati Pooja",
-    imageUrl: saraswatipuja,
-    link: "/pooja-offering",
-  },
-  {
-    title: "Hanuman Pooja",
-    imageUrl: humanpuja,
-    link: "/pooja-offering",
-  },
-  {
-    title: "Navagraha Pooja ",
-    imageUrl: puja,
-    link: "/pooja-offering",
-  },
-  { title: "Shiva Pooja", imageUrl: shivpuja, link: "pooja-offering" },
-];
-
 const TypesOfPooja = () => {
+  const [poojaData, setPoojaData] = useState([]); // State to store fetched data
+  const [loading, setLoading] = useState(true); // Loading state
+
+  // Set the base URL for axios
+  axios.defaults.baseURL = "http://localhost:5000";
+
+  // Fetch pooja data from the backend API
+  useEffect(() => {
+    const fetchPoojas = async () => {
+      try {
+        const response = await axios.get("/api/poojas");
+        setPoojaData(response.data);
+        setLoading(false); 
+      } catch (error) {
+        console.error("Error fetching poojas:", error);
+        setLoading(false); 
+      }
+    };
+
+    fetchPoojas(); 
+  }, []); 
+
+  if (loading) {
+    return (
+      <Box display="flex" justifyContent="center" alignItems="center" height="100vh">
+        <Spinner size="xl" color="blue.500" />
+      </Box>
+    );
+  }
+
+  // Map fetched data to card data
+  const cardData = poojaData.map(pooja => ({
+    title: pooja.name,
+    imageUrl: pooja.image,
+    link: pooja.link,
+  }));
+
   return (
     <Box w="100%" h="100%" py={8} px={6}>
       {/* Temple Image */}
@@ -75,7 +71,6 @@ const TypesOfPooja = () => {
       </Text>
 
       {/* Pooja Cards */}
-
       <CommonCard cardData={cardData} />
     </Box>
   );
