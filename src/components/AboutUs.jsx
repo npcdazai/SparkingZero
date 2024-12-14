@@ -17,16 +17,19 @@ const AboutUs = () => {
       title: "Festival",
       description: "Description for Festival",
       imageUrl: diwali,
+      link: "/festivals",
     },
     {
       title: "Program",
       description: "Description for Ceremony",
       imageUrl: program,
+      link: "/event",
     },
     {
       title: "Event",
       description: "Description for Event",
       imageUrl: event,
+      link: "/event",
     },
   ];
 

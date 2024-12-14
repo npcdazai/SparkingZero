@@ -2,10 +2,47 @@ import { Box, HStack, Image, Text, VStack } from "@chakra-ui/react";
 import eventbanner from "../assets/Images/eventbanner.png";
 import EventInfo from "../components/Events/EventInfo";
 import EventVital from "../components/Events/EventVital";
-import mahaparsad from "../assets/Videos/test.mp4";
+import BentoGrid from "../components/Ui/BentoGrid";
+import pooja from "../assets/Images/pooja.png";
+import diwali from "../assets/Images/diwali.png";
+import program from "../assets/Images/program.png";
+import event from "../assets/Images/event.png";
+import kalash from "../assets/Images/new_Images/kalsh.png";
 import puja from "../assets/Images/new_Images/pujaEvent.jpg";
 import parsad from "../assets/Images/new_Images/parsadevent.jpg";
 import marraige from "../assets/Images/new_Images/marriage.jpg";
+import mahaparsad from "../assets/Videos/test.mp4";
+
+const cardData = [
+  {
+    title: "Pooja",
+    description: "Description for Pooja",
+    imageUrl: pooja,
+    festName: "Diwali",
+  },
+  {
+    title: "Festival",
+    description: "Description for Festival",
+    imageUrl: diwali,
+    link: "/event",
+    festName: "Diwali",
+  },
+  {
+    title: "Program",
+    description: "Description for Ceremony",
+    imageUrl: program,
+    link: "/event",
+    festName: "Diwali",
+  },
+  {
+    title: "Event",
+    description: "Description for Event",
+    imageUrl: event,
+    link: "/event",
+    festName: "Diwali",
+  },
+];
+
 const info = [
   {
     id: 1,
@@ -39,7 +76,7 @@ const info = [
   },
 ];
 
-const Events = () => {
+const Festivals = () => {
   return (
     <Box p={4}>
       <VStack
@@ -74,7 +111,7 @@ const Events = () => {
             bgColor="transparent"
             className="tiro-devanagari-hindi-regular"
           >
-            Event
+            FESTIVALS
           </Text>
 
           <Text
@@ -90,7 +127,7 @@ const Events = () => {
       </VStack>
 
       <HStack w="100%" alignItems="flex-start">
-        <VStack w="70%" h="800px" overflowY="scroll">
+        <VStack w="60%" h="800px" overflowY="scroll">
           {info.map((val) => {
             return (
               <EventInfo
@@ -105,12 +142,22 @@ const Events = () => {
             );
           })}
         </VStack>
-        <VStack w="30%">
-          <EventVital />
+        <VStack w="40%" h="800px" overflowY="scroll">
+          {cardData.map((val) => {
+            return (
+              <BentoGrid
+                title={val.title}
+                img={val.imageUrl}
+                festivalName={val.festName}
+                description={val.description}
+                key={val.id}
+              />
+            );
+          })}
         </VStack>
       </HStack>
     </Box>
   );
 };
 
-export default Events;
+export default Festivals;

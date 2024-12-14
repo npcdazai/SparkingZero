@@ -25,6 +25,8 @@ import { MdPeopleAlt, MdEvent } from "react-icons/md";
 import { GiPrayer } from "react-icons/gi";
 import pooja from "../assets/Images/poojas.png";
 import cow from "../assets/Images/cow.png";
+
+
 const serviceData = [
   {
     title: "Pooja",
@@ -47,6 +49,7 @@ const serviceData = [
     imageUrl: "https://via.placeholder.com/300x200?text=Cultural+Evening",
   },
 ];
+
 const services = [
   {
     icon: GiPrayer,
@@ -69,6 +72,7 @@ const services = [
     description: "Educational sessions and workshops.",
   },
 ];
+
 
 const Home = () => {
   const AboutUsComponent = useBreakpointValue({

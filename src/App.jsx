@@ -13,6 +13,7 @@ import PoojaOffering from "./pages/PoojaOffering";
 import BookPooja from "./pages/BookPooja";
 import AllMembers from "./pages/AllMembers";
 import CowOffering from "./pages/CowOffering";
+import Festivals from "./pages/Festivals";
 function App() {
   const HeaderComponent = useBreakpointValue({
     base: <HeaderMobile />,
@@ -31,6 +32,7 @@ function App() {
           <Route path="/pooja-offering" element={<PoojaOffering />} />
           <Route path="/members" element={<AllMembers />} />
           <Route path="/cow-offering" element={<CowOffering/>}/>
+          <Route path="/festivals" element={<Festivals/>}/>
         </Routes>
         <FooterCom/>
         <Footer/>
