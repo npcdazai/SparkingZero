@@ -4,6 +4,7 @@ import navratri from "../assets/Images/navratri.png";
 import community from "../assets/Images/community.png";
 import evening from "../assets/Images/evening.png";
 import kalash from "../assets/Images/new_Images/kalsh.png";
+import { NavLink } from "react-router-dom";
 const UpcomingEvents = () => {
   const eventData = [
     {
@@ -11,22 +12,26 @@ const UpcomingEvents = () => {
       description:
         "Join us for a grand Diwali celebration with fireworks and festivities.",
       imageUrl: diwali,
+      link: "/festivals",
     },
     {
       title: "Navratri Festival",
       description: "Nine nights of worship and dance to celebrate Navratri.",
       imageUrl: navratri,
+      link: "/festivals",
     },
     {
       title: "Community Service",
       description: "Weekly yoga sessions for wellness and mindfulness.",
       imageUrl: community,
+      link: "/event",
     },
     {
       title: "Cultural Evening",
       description:
         "An evening of music and dance performances by local artists.",
       imageUrl: evening,
+      link: "/event",
     },
   ];
 
@@ -64,27 +69,28 @@ const UpcomingEvents = () => {
                 w="full"
                 objectFit="cover"
               />
-
-              <Box
-                position="absolute"
-                top="0"
-                left="0"
-                h="full"
-                w="full"
-                bg="rgba(0, 0, 0, 0.5)"
-                opacity="0"
-                transition="opacity 0.3s ease-in-out"
-                display="flex"
-                alignItems="center"
-                justifyContent="center"
-                _hover={{ opacity: 1 }}
-                flexDirection="column"
-              >
-                <Image h="100px" src={kalash} />
-                <Text as="span" color="white" fontSize="sm" fontWeight="bold">
-                  Learn More
-                </Text>
-              </Box>
+              <NavLink to={event.link}>
+                <Box
+                  position="absolute"
+                  top="0"
+                  left="0"
+                  h="full"
+                  w="full"
+                  bg="rgba(0, 0, 0, 0.5)"
+                  opacity="0"
+                  transition="opacity 0.3s ease-in-out"
+                  display="flex"
+                  alignItems="center"
+                  justifyContent="center"
+                  _hover={{ opacity: 1 }}
+                  flexDirection="column"
+                >
+                  <Image h="100px" src={kalash} />
+                  <Text as="span" color="white" fontSize="sm" fontWeight="bold">
+                    Learn More
+                  </Text>
+                </Box>
+              </NavLink>
             </Box>
             <Box padding="4">
               <Text fontWeight="bold" textAlign="left">

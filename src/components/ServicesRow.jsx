@@ -1,8 +1,7 @@
 import { Box, SimpleGrid, Text, Image, VStack } from "@chakra-ui/react";
 import pooja from "../assets/Images/poojas.png";
 import cow from "../assets/Images/cow.png";
-
-
+import kalash from "../assets/Images/new_Images/kalsh.png";
 
 const ServicesRow = ({ des, title, arr }) => {
   return (
@@ -44,7 +43,6 @@ const ServicesRow = ({ des, title, arr }) => {
                 w="full"
                 objectFit="cover"
               />
-
               <Box
                 position="absolute"
                 top="0"
@@ -55,11 +53,13 @@ const ServicesRow = ({ des, title, arr }) => {
                 opacity="0"
                 transition="opacity 0.3s ease-in-out"
                 display="flex"
+                flexDirection="column"
                 alignItems="center"
                 justifyContent="center"
                 _hover={{ opacity: 1 }}
               >
-                <Text color="white" fontSize="lg" fontWeight="bold">
+                <Image h="100px" src={kalash} />
+                <Text as="span" color="white" fontSize="sm" fontWeight="bold">
                   Learn More
                 </Text>
               </Box>

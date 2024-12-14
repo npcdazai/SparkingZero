@@ -1,7 +1,7 @@
 // routes/poojaBookings.js
 const express = require('express');
 const router = express.Router();
-const PoojaBooking = require('../models/PoojaBooking'); // Assuming you have a Mongoose model for bookings
+const PoojaBooking = require('../models/PoojaBooking'); 
 
 // Add a new booking
 router.post('/add', async (req, res) => {

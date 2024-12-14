@@ -1,4 +1,4 @@
-import {
+import { 
   Box,
   Button,
   FormControl,
@@ -20,45 +20,37 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import { Image } from "@chakra-ui/react";
-import templeImage from "../assets/Images/poojas.png"; // Example image
+import templeImage from "../assets/Images/poojas.png";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import axios from "axios";
 
 const BookPooja = () => {
   const { register, handleSubmit } = useForm();
-  const { isOpen, onOpen, onClose } = useDisclosure(); // Modal state
-  const [formData, setFormData] = useState(null); // Store form data
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [formData, setFormData] = useState(null);
 
   const onSubmit = async (data) => {
     try {
-      const response = await fetch('http://localhost:5000/api/poojaBookings/add', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(data),
-      });
-      
-      const responseData = await response.json();
-      
-      if (response.ok) {
+      const response = await axios.post(
+        'http://localhost:5000/api/poojaBookings/add',
+        data
+      );
+      if (response.status === 200) {
         setFormData(data);
         console.log('Booking successfully added');
         onOpen();
       } else {
-        console.error('Error adding booking:', responseData.message);
+        console.error('Error adding booking:', response.data.message);
       }
     } catch (error) {
       console.error('Error:', error);
     }
   };
-  
-  
 
   return (
     <Box w="100%" h="100%" py={1} px={6}>
       <Box w="100%" h="100%" py={8} px={6}>
-        {/* Temple Image */}
         <Image
           src={templeImage}
           alt="Temple"
@@ -69,12 +61,10 @@ const BookPooja = () => {
           mb={6}
         />
 
-        {/* Heading */}
         <Heading textAlign="center" size="lg" mb={4}>
           About the Pooja
         </Heading>
 
-        {/* Description */}
         <Text fontSize="md" textAlign="center" mb={6}>
           Learn more about the pooja you are about to book. Below are the
           details regarding the pooja timing, duration, and the required
@@ -82,7 +72,6 @@ const BookPooja = () => {
           and divine blessings.
         </Text>
 
-        {/* Card with Pooja Details */}
         <Box
           bg="white"
           boxShadow="md"
@@ -93,7 +82,6 @@ const BookPooja = () => {
           mt={8}
         >
           <VStack align="stretch" spacing={4}>
-            {/* Pooja Timing */}
             <HStack justify="space-between">
               <Text fontSize="md" fontWeight="600">
                 Pooja Timing:
@@ -103,7 +91,6 @@ const BookPooja = () => {
               </Text>
             </HStack>
 
-            {/* Duration */}
             <HStack justify="space-between">
               <Text fontSize="md" fontWeight="600">
                 Duration:
@@ -113,7 +100,6 @@ const BookPooja = () => {
               </Text>
             </HStack>
 
-            {/* Donation Amount */}
             <HStack justify="space-between">
               <Text fontSize="md" fontWeight="600">
                 Donation Amount:
@@ -126,7 +112,6 @@ const BookPooja = () => {
         </Box>
       </Box>
 
-      {/* Booking Form */}
       <Heading textAlign="center" size="lg" mb={4}>
         Book Your Pooja
       </Heading>
@@ -134,7 +119,6 @@ const BookPooja = () => {
       <Box w="100%" as="form" onSubmit={handleSubmit(onSubmit)}>
         <VStack p={6} w="100%" spacing={6} alignItems="center">
           <SimpleGrid w="100%" columns={[2]} spacing={10}>
-            {/* Name Input */}
             <FormControl w="100%">
               <FormLabel>Name</FormLabel>
               <Box p={4} borderRadius="40px" bg="white" w="100%">
@@ -148,7 +132,6 @@ const BookPooja = () => {
               </Box>
             </FormControl>
 
-            {/* Date of Pooja */}
             <FormControl w="100%">
               <FormLabel>Date of Pooja</FormLabel>
               <Box p={4} borderRadius="40px" bg="white" w="100%">
@@ -162,7 +145,6 @@ const BookPooja = () => {
               </Box>
             </FormControl>
 
-            {/* Time Slot */}
             <FormControl w="100%">
               <FormLabel>Time Slot</FormLabel>
               <Box p={4} borderRadius="40px" bg="white" w="100%">
@@ -179,7 +161,6 @@ const BookPooja = () => {
               </Box>
             </FormControl>
 
-            {/* Choose Pooja */}
             <FormControl w="100%">
               <FormLabel>Choose Pooja</FormLabel>
               <Box p={4} borderRadius="40px" bg="white" w="100%">
@@ -196,7 +177,6 @@ const BookPooja = () => {
               </Box>
             </FormControl>
 
-            {/* Email Address */}
             <FormControl w="100%">
               <FormLabel>Email Address</FormLabel>
               <Box p={4} borderRadius="40px" bg="white" w="100%">
@@ -210,7 +190,6 @@ const BookPooja = () => {
               </Box>
             </FormControl>
 
-            {/* Phone Number */}
             <FormControl w="100%">
               <FormLabel>Phone Number</FormLabel>
               <Box p={4} borderRadius="40px" bg="white" w="100%">
@@ -225,7 +204,6 @@ const BookPooja = () => {
             </FormControl>
           </SimpleGrid>
 
-          {/* Confirm Booking Button */}
           <Button
             type="submit"
             bgGradient="linear(to-r, #F6B253, #FF9500)"
@@ -243,7 +221,6 @@ const BookPooja = () => {
         </VStack>
       </Box>
 
-      {/* Modal for Confirmation */}
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent>

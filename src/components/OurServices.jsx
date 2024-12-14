@@ -45,12 +45,12 @@ const OurServices = ({title , des,  arr}) => {
                 {service.title}
               </Text>
               <Text color="gray.600">{service.description}</Text>
-              <HStack as="span">
+              {/* <HStack as="span">
                 <Text as="span" fontSize="x-small"  >
                   LEARN MORE{" "}
                 </Text>
                 <Icon as={FaLongArrowAltRight} boxSize={7} color="orange.500"/>
-              </HStack>
+              </HStack> */}
             </VStack>
           </Box>
         ))}
