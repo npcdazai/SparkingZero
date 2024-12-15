@@ -8,12 +8,12 @@ const TypesOfPooja = () => {
   const [poojaData, setPoojaData] = useState([]); 
   const [loading, setLoading] = useState(true);
 
-  axios.defaults.baseURL = "https://ngo-backend-8yek.onrender.com";
+  // axios.defaults.baseURL = "https://ngo-backend-8yek.onrender.com";
 
   useEffect(() => {
     const fetchPoojas = async () => {
       try {
-        const response = await axios.get("/api/poojas");
+        const response = await axios.get("https://ngo-backend-8yek.onrender.com/api/poojas");
         setPoojaData(response.data);
         setLoading(false); 
       } catch (error) {
