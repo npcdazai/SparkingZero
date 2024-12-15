@@ -1,9 +1,6 @@
 import { Box, Button, Image, Text } from "@chakra-ui/react";
-import bannner1 from "../../../assets/Images/banner1.jpg";
 import OrangeBg from "../../../assets/images/pink.png";
-import asset from "../../../assets/logos/fix.png";
 import offering from "../../../assets/Images/diwali.png";
-import coro from "../../../assets/Images/coro.png";
 
 const SecondCard = () => {
   return (
