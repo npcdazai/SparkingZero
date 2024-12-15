@@ -5,6 +5,7 @@ import FirstCard from "./Ui/Cards/FirstCard";
 import SecondCard from "./Ui/Cards/Secondcardo";
 import ThirdCard from "./Ui/Cards/ThirdCardo";
 
+
 const MotionBox = motion(Box);
 
 const Carousel = () => {
@@ -14,7 +15,7 @@ const Carousel = () => {
 
   const items = [
     {
-      title: "Pooja 1",
+      title: "Pooja 01",
       description: "Description of Pooja 1",
       component: <FirstCard />,
     },
