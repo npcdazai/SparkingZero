@@ -33,7 +33,7 @@ const BookPooja = () => {
   const onSubmit = async (data) => {
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/poojaBookings/add",
+        "https://ngo-backend-8yek.onrender.com/api/poojaBookings/add",
         data
       );
       if (response.status === 201) {

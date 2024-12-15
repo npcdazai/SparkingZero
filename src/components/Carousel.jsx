@@ -2,14 +2,14 @@ import { Box, Button, HStack } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import FirstCard from "./Ui/Cards/FirstCard";
-import SecondCard from "./Ui/Cards/SecondCardo";
+import SecondCard from "./Ui/Cards/Secondcardo";
 import ThirdCard from "./Ui/Cards/ThirdCardo";
 
 const MotionBox = motion(Box);
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(1); // 1 for next, -1 for previous
+  const [direction, setDirection] = useState(1); 
   const intervalTime = 10000;
 
   const items = [
@@ -31,12 +31,12 @@ const Carousel = () => {
   ];
 
   const nextSlide = () => {
-    setDirection(1); // Move right
+    setDirection(1); 
     setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
   };
 
   const prevSlide = () => {
-    setDirection(-1); // Move left
+    setDirection(-1); 
     setCurrentIndex((prevIndex) => (prevIndex - 1 + items.length) % items.length);
   };
 

@@ -9,7 +9,7 @@ const TypesOfPooja = () => {
   const [loading, setLoading] = useState(true); // Loading state
 
   // Set the base URL for axios
-  axios.defaults.baseURL = "http://localhost:5000";
+  axios.defaults.baseURL = "https://ngo-backend-8yek.onrender.com";
 
   // Fetch pooja data from the backend API
   useEffect(() => {

@@ -8,7 +8,7 @@ import { Box, Text, VStack, Spinner } from "@chakra-ui/react";
 const AllMembers = () => {
   const [membersData, setMembersData] = useState([]); 
   const [loading, setLoading] = useState(true);
-  axios.defaults.baseURL = "http://localhost:5000"; 
+  axios.defaults.baseURL = "https://ngo-backend-8yek.onrender.com"; 
 
   useEffect(() => {
     const fetchMembers = async () => {

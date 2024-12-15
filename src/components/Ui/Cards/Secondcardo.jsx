@@ -1,9 +1,6 @@
 import { Box, Button, Image, Text } from "@chakra-ui/react";
-import bannner1 from "../../../assets/Images/banner1.jpg";
 import OrangeBg from "../../../assets/images/greencow.png";
-import asset from "../../../assets/logos/fix.png";
 import offering from "../../../assets/Images/cows.png";
-import coro from "../../../assets/Images/coro.png";
 
 const SecondCard = () => {
   return (
@@ -18,7 +15,6 @@ const SecondCard = () => {
       h="100%"
       borderRadius="20px"
       position="relative"
-      // px={{ base: 4, md: 8 }}
     >
       <Image
         bottom={0}
@@ -29,7 +25,7 @@ const SecondCard = () => {
       />
       <Box
         bgColor="transparent"
-        w={{ base: "100%", md: "50%" }} // Full width on mobile, half width on larger screens
+        w={{ base: "100%", md: "50%" }} 
         display="flex"
         flexDirection="column"
         gap={6}
@@ -38,7 +34,7 @@ const SecondCard = () => {
       >
         <Text
           as="h1"
-          fontSize={{ base: "36px", md: "54px" }} // Responsive font size
+          fontSize={{ base: "36px", md: "54px" }} 
           fontWeight="bold"
           fontFamily="Roca Two"
           position="relative"
@@ -61,7 +57,7 @@ const SecondCard = () => {
         <Text
           bgColor="transparent"
           as="span"
-          fontSize={{ base: "md", md: "lg" }} // Responsive font size
+          fontSize={{ base: "md", md: "lg" }}
           fontWeight={500}
           className="tiro-devanagari-hindi-regular"
         >
@@ -72,7 +68,7 @@ const SecondCard = () => {
           bgColor="transparent"
           display="flex"
           justifyContent="center"
-          flexDirection={{ base: "column", sm: "row" }} // Stack buttons on small screens
+          flexDirection={{ base: "column", sm: "row" }} 
           gap={4}
         >
           <Button
@@ -121,7 +117,7 @@ const SecondCard = () => {
         <Text
           bgColor="transparent"
           as="span"
-          fontSize={{ base: "1rem", md: "1.25rem" }} // Responsive font size
+          fontSize={{ base: "1rem", md: "1.25rem" }} 
           color="#fff"
           className="m-plus-rounded-1c-regular"
         >
@@ -134,7 +130,7 @@ const SecondCard = () => {
           clipPath: "polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%)",
         }}
         bg="tomato"
-        width={{ base: "100%", md: "50%" }} // Full width on mobile, half width on larger screens
+        width={{ base: "100%", md: "50%" }}
         height="100%"
         overflow="hidden"
         borderRadius="md"
