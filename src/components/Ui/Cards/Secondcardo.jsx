@@ -1,6 +1,6 @@
 import { Box, Button, Image, Text } from "@chakra-ui/react";
-import OrangeBg from "../../../assets/Images/greencow.png";
 import offering from "../../../assets/Images/cows.png";
+import OrangeBg from "../../../assets/Images/greencow.png";
 
 const SecondCard = () => {
   return (
