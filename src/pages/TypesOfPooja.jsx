@@ -5,13 +5,11 @@ import templeImage from "../assets/Images/poojas.png";
 import CommonCard from "../components/Ui/CommonCard";
 
 const TypesOfPooja = () => {
-  const [poojaData, setPoojaData] = useState([]); // State to store fetched data
-  const [loading, setLoading] = useState(true); // Loading state
+  const [poojaData, setPoojaData] = useState([]); 
+  const [loading, setLoading] = useState(true);
 
-  // Set the base URL for axios
   axios.defaults.baseURL = "https://ngo-backend-8yek.onrender.com";
 
-  // Fetch pooja data from the backend API
   useEffect(() => {
     const fetchPoojas = async () => {
       try {
@@ -35,7 +33,6 @@ const TypesOfPooja = () => {
     );
   }
 
-  // Map fetched data to card data
   const cardData = poojaData.map(pooja => ({
     title: pooja.name,
     imageUrl: pooja.image,
@@ -44,7 +41,6 @@ const TypesOfPooja = () => {
 
   return (
     <Box w="100%" h="100%" py={8} px={6}>
-      {/* Temple Image */}
       <Image
         src={templeImage}
         alt="Temple"
@@ -55,12 +51,10 @@ const TypesOfPooja = () => {
         mb={6}
       />
 
-      {/* Heading */}
       <Heading textAlign="left" size="lg" mb={4}>
         Types of Pooja
       </Heading>
 
-      {/* Description */}
       <Text fontSize="sm" textAlign="left" mb={4}>
         Our temple offers a variety of poojas to cater to the spiritual needs of
         our devotees. From daily rituals to special ceremonies, each pooja is
@@ -70,7 +64,6 @@ const TypesOfPooja = () => {
         deities and bring peace, prosperity, and happiness to the devotees.
       </Text>
 
-      {/* Pooja Cards */}
       <CommonCard cardData={cardData} />
     </Box>
   );
