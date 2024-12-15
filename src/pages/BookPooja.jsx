@@ -1,4 +1,4 @@
-import { 
+import {
   Box,
   Button,
   FormControl,
@@ -33,18 +33,18 @@ const BookPooja = () => {
   const onSubmit = async (data) => {
     try {
       const response = await axios.post(
-        'http://localhost:5000/api/poojaBookings/add',
+        "http://localhost:5000/api/poojaBookings/add",
         data
       );
-      if (response.status === 200) {
+      if (response.status === 201) {
         setFormData(data);
-        console.log('Booking successfully added');
+        console.log("Booking successfully added");
         onOpen();
       } else {
-        console.error('Error adding booking:', response.data.message);
+        console.error("Error adding booking:", response.data.message);
       }
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   };
 
@@ -229,12 +229,24 @@ const BookPooja = () => {
           <ModalBody>
             <Text>Thank you for booking! We will get back to you shortly.</Text>
             <Text mt={4}>Your booking details:</Text>
-            <Text mt={2}><strong>Name:</strong> {formData?.name}</Text>
-            <Text mt={2}><strong>Date:</strong> {formData?.date}</Text>
-            <Text mt={2}><strong>Time Slot:</strong> {formData?.timeSlot}</Text>
-            <Text mt={2}><strong>Pooja:</strong> {formData?.pooja}</Text>
-            <Text mt={2}><strong>Email:</strong> {formData?.email}</Text>
-            <Text mt={2}><strong>Phone:</strong> {formData?.phone}</Text>
+            <Text mt={2}>
+              <strong>Name:</strong> {formData?.name}
+            </Text>
+            <Text mt={2}>
+              <strong>Date:</strong> {formData?.date}
+            </Text>
+            <Text mt={2}>
+              <strong>Time Slot:</strong> {formData?.timeSlot}
+            </Text>
+            <Text mt={2}>
+              <strong>Pooja:</strong> {formData?.pooja}
+            </Text>
+            <Text mt={2}>
+              <strong>Email:</strong> {formData?.email}
+            </Text>
+            <Text mt={2}>
+              <strong>Phone:</strong> {formData?.phone}
+            </Text>
           </ModalBody>
 
           <ModalFooter>

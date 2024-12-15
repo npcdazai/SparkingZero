@@ -6,26 +6,24 @@ import Explore from "../components/Explore";
 import { Box, Text, VStack, Spinner } from "@chakra-ui/react";
 
 const AllMembers = () => {
-  const [membersData, setMembersData] = useState([]); // State to store fetched data
-  const [loading, setLoading] = useState(true); // Loading state
+  const [membersData, setMembersData] = useState([]); 
+  const [loading, setLoading] = useState(true);
   axios.defaults.baseURL = "http://localhost:5000"; 
 
-  // Fetch members data from the backend API
   useEffect(() => {
     const fetchMembers = async () => {
       try {
         const response = await axios.get("/api/members"); 
         setMembersData(response.data); 
-        setLoading(false); // Turn off loading once data is fetched
+        setLoading(false); 
       } catch (error) {
         console.error("Error fetching members:", error);
-        setLoading(false); // Turn off loading in case of error
+        setLoading(false); 
       }
     };
   
     fetchMembers();
-  }, []);  // Empty dependency array ensures this runs once on component mount
-
+  }, []);  
   if (loading) {
     return (
       <Box display="flex" justifyContent="center" alignItems="center" height="100vh">
