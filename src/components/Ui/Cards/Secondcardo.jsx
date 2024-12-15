@@ -42,7 +42,7 @@ const SecondCard = () => {
           bgColor="transparent"
           className="tiro-devanagari-hindi-regular"
         >
-          शिवशक्ति{" "}
+          शिवशक्ति{"  "}
           <Text
             className="tiro-devanagari-hindi-regular"
             bgColor="transparent"
