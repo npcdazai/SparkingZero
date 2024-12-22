@@ -1,33 +1,14 @@
 import { Box, Text, SimpleGrid, Image } from "@chakra-ui/react";
 import kalash from "../../assets/Images/new_Images/kalsh.png";
 import { NavLink } from "react-router-dom";
-import gan from "../../assets/Images/Poojas/ganeshpuja.png"
-import human from "../../assets/Images/Poojas/humanpuja.png"
-import nav from "../../assets/Images/Poojas/puja.png"
-import shiv from "../../assets/Images/Poojas/Saraswatipuja.png"
-
-const dara = [
-  {
-    id: 1, title: "Ganesh Pooja", imageUrl: gan, link: "/pooja-offering"
-  },
-  {
-    id: 2, title: "Ganesh Pooja", imageUrl: gan, link: "/pooja-offering"
-  },
-  {
-    id: 2, title: "Ganesh Pooja", imageUrl: gan, link: "/pooja-offering"
-  },
-  {
-    id: 2, title: "Ganesh Pooja", imageUrl: gan, link: "/pooja-offering"
-  }
-]
 
 
-const CommonCard = () => {
+const CommonCard = ({cardData}) => {
 
   return (
     <Box marginTop={4} padding="4" bg="gray.50">
       <SimpleGrid columns={[3]} spacing={10}>
-        {dara.map((card, index) => (
+        {cardData.map((card, index) => (
           <Box
             key={index}
             borderWidth="1px"
