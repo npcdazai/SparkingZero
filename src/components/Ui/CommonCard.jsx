@@ -2,7 +2,6 @@ import { Box, Text, SimpleGrid, Image } from "@chakra-ui/react";
 import kalash from "../../assets/Images/new_Images/kalsh.png";
 import { NavLink } from "react-router-dom";
 
-
 const CommonCard = ({cardData}) => {
 
   return (
@@ -31,7 +30,7 @@ const CommonCard = ({cardData}) => {
             >
               <NavLink to={card.link}>
                 <Image
-                  src={card.imageUrl}
+                  src={"./Poojas/ganeshpuja.png"}
                   alt={card.title}
                   h="full"
                   w="full"
