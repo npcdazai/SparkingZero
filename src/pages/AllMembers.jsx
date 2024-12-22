@@ -24,6 +24,7 @@ const AllMembers = () => {
   
     fetchMembers();
   }, []);  
+
   if (loading) {
     return (
       <Box display="flex" justifyContent="center" alignItems="center" height="100vh">
@@ -81,9 +82,11 @@ const AllMembers = () => {
         </Box>
       </VStack>
       {membersData.map((val, index) => {
+        // Ensure the full image path is constructed correctly
+        const imageUrl = `${axios.defaults.baseURL}${val.image}`;
         return (
           <Box key={index}>
-            <MembersCard name={val.name} img={val.image} role={val.role} />
+            <MembersCard name={val.name} img={imageUrl} role={val.role} />
           </Box>
         );
       })}
