@@ -1,8 +1,14 @@
-import { Box, Image, Text, VStack } from "@chakra-ui/react";
+import { Box, Image, Text, useBreakpointValue, VStack } from "@chakra-ui/react";
 import eventbanner from "../assets/Images/eventbanner.png";
 import Belive from "../components/About/Belive";
 import RoadMap from "../components/About/RoadMap"
+import BeliveMobile from "../components/mobile/BeliveMobile"
 const Events = () => {
+  const Belives = useBreakpointValue({
+    base: <BeliveMobile />,
+    lg: <Belive />,
+  });
+
   return (
     <Box p={4}>
       <VStack
@@ -11,7 +17,7 @@ const Events = () => {
         overflow="hidden"
         bg="gray.100"
         w="full"
-        h="300px"
+        h={{base:"20vh" , lg:"50vh"}}
         alignItems="center"
         // justifyContent="center"
       >
@@ -42,7 +48,7 @@ const Events = () => {
         </Box>
       </VStack>
 
-      <Belive/>
+      {Belives}
       <RoadMap/>
     </Box>
   );

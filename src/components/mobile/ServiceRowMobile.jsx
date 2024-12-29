@@ -4,22 +4,22 @@ import cow from "../../assets/Images/cow.png"
 const ServicesRowMobile = () => {
   const serviceData = [
     {
-      title: "Pooja", 
+      title: "Pooja",
       description: "Various Pooja services offered.",
       imageUrl: pooja,
     },
     {
-      title: "Cow Offering", 
+      title: "Cow Offering",
       description: "Community programs for all.",
       imageUrl: cow,
     },
     {
-      title: "Events", 
+      title: "Events",
       description: "Special events throughout the year.",
       imageUrl: "https://via.placeholder.com/300x200?text=Yoga",
     },
     {
-      title: "Education", 
+      title: "Education",
       description: "Educational sessions and workshops.",
       imageUrl: "https://via.placeholder.com/300x200?text=Cultural+Evening",
     },
@@ -34,12 +34,12 @@ const ServicesRowMobile = () => {
         {serviceData.map((service, index) => (
           <Box
             key={index}
-            minWidth="160px" // Minimum width for each card
+            minWidth="calc(65% - 16px)"
             borderWidth="1px"
             borderRadius="20px"
             overflow="hidden"
             bg="white"
-            mr="4" // Margin between cards
+            mr="4"
           >
             <Image src={service.imageUrl} alt={service.title} />
             <Box padding="4">

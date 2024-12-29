@@ -2,9 +2,9 @@ import { Box, HStack, Icon, Text, VStack, AspectRatio } from "@chakra-ui/react";
 import { CiClock1 } from "react-icons/ci";
 import { IoLocationSharp } from "react-icons/io5";
 
-const EventInfo = ({ img, title, description, dateTime, location, vidurl, id }) => {
+const EventInfoMobile = ({ img, title, description, dateTime, location, vidurl, id }) => {
   return (
-    <Box p={8} key={id}>
+    <Box p={1} key={id}>
       <VStack
         boxShadow="md"
         borderRadius="md"
@@ -62,4 +62,4 @@ const EventInfo = ({ img, title, description, dateTime, location, vidurl, id }) 
   );
 };
 
-export default EventInfo;
+export default EventInfoMobile;

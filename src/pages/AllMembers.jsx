@@ -34,7 +34,7 @@ const AllMembers = () => {
   }
 
   return (
-    <Box p={4} display="flex" flexWrap="wrap" bgColor="#fffaf0">
+    <Box overflow={"hidden"} p={4} display="flex" flexWrap="wrap" bgColor="#fffaf0">
       <VStack
         position="relative"
         borderRadius="20px"

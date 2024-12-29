@@ -11,7 +11,7 @@ const Payment = () => {
   ];
 
   return (
-    <Box marginTop="10" padding="6" bg="gray.50">
+    <Box marginTop="10" padding={{ base: 1, lg: 6 }} bg="gray.50">
       {/* Header */}
       <Text fontSize="3xl" fontWeight="bold" mb="6" textAlign="left">
         Choose Your Payment Method
@@ -48,19 +48,19 @@ const Payment = () => {
           Secure Information
         </Text>
         <Text fontSize="sm" mb="6" px="10">
-        We prioritize the security of your transactions. Our payment systems are encrypted and comply with the highest standards of security. Your personal and financial information is protected, ensuring a safe and secure donation process. We are committed to maintaining your trust and ensuring that your contributions are used effectively for the betterment of the community.        </Text>
+          We prioritize the security of your transactions. Our payment systems are encrypted and comply with the highest standards of security. Your personal and financial information is protected, ensuring a safe and secure donation process. We are committed to maintaining your trust and ensuring that your contributions are used effectively for the betterment of the community.        </Text>
 
         {/* Donation Button */}
-        <Button 
-        bgGradient="linear(to-r, #F6B253, #FF9500)"
-        color="white"
-        size="lg" 
-        padding="8"
-        width="70%"
-        borderRadius="full"
-      >
-        Donate Now
-      </Button>
+        <Button
+          bgGradient="linear(to-r, #F6B253, #FF9500)"
+          color="white"
+          size="lg"
+          padding="8"
+          width="70%"
+          borderRadius="full"
+        >
+          Donate Now
+        </Button>
       </Box>
     </Box>
   );

@@ -2,7 +2,7 @@ import { Box, Text, Button } from "@chakra-ui/react";
 
 const Membership = () => {
   return (
-    <Box marginTop="10" padding="6" bg="gray.50" textAlign="center">
+    <Box marginTop="10" padding={{ base: 1, lg: 6 }} bg="gray.50" textAlign="center">
       {/* Header */}
       <Text fontSize="3xl" fontWeight="bold" mb="4">
         Become a Member
@@ -14,10 +14,10 @@ const Membership = () => {
       </Text>
 
       {/* Button with gradient background */}
-      <Button 
+      <Button
         bgGradient="linear(to-r, #F6B253, #FF9500)"
         color="white"
-        size="lg" 
+        size="lg"
         padding="8"
         width="60%"
         borderRadius="full"

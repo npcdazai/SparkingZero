@@ -23,21 +23,24 @@ const Explore = () => {
     {
       title: "Event",
       description: "Description for Event",
-      imageUrl: event,
+      imageUrl: pooja,
     },
   ];
 
   return (
     <Box marginTop="10" padding="4" bg="gray.50">
-      <Text fontSize="3xl" fontWeight="bold" mb="4" textAlign="left">
+      <Text fontSize={{ base: "xl", lg: "3xl" }} fontWeight="bold" mb="4" textAlign="left">
         Explore
       </Text>
-      <Text fontSize="xl" mb="8" textAlign="left">
+      <Text fontSize={{ base: "sm", lg: "xl" }} mb="8" textAlign="left">
         We are dedicated to providing spiritual guidance and services through
         our various rituals and ceremonies. Join us in celebrating and
         understanding our traditions.
       </Text>
-      <Flex paddingBottom="4">
+      <Flex
+        overflowX={{ base: "scroll", lg: "hidden" }}
+        pb={4}
+      >
         <Flex>
           {cardData.map((card, index) => (
             <Box
@@ -46,8 +49,9 @@ const Explore = () => {
               borderWidth="1px"
               borderRadius="20px"
               overflow="hidden"
-              bg="white"  
-              marginRight="2rem"
+              bg="white"
+              marginRight="1rem"
+              minWidth={{ base: "calc(59% - 16px)", lg: "200px" }}
             >
               <Image src={card.imageUrl} alt={card.title} />
               <Box padding="4">

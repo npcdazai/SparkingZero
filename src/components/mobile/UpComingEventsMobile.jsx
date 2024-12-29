@@ -38,13 +38,13 @@ const UpcomingEventsMobile = () => {
         {eventData.map((event, index) => (
           <Box
             key={index}
-            minWidth="calc(50% - 16px)" // Adjust minWidth for two cards to fit with margin
-            maxWidth="calc(50% - 16px)" // Ensure maxWidth matches minWidth for consistency
+            minWidth="calc(65% - 16px)"
+            maxWidth="calc(70% - 16px)"
             borderWidth="1px"
             borderRadius="10px"
             overflow="hidden"
             bg="white"
-            mr="4" // Add margin between cards
+            mr="4" 
           >
             <Image src={event.imageUrl} alt={event.title} />
             <Box padding="4">

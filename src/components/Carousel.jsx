@@ -10,7 +10,7 @@ const MotionBox = motion(Box);
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(1); 
+  const [direction, setDirection] = useState(1);
   const intervalTime = 10000;
 
   const items = [
@@ -32,12 +32,12 @@ const Carousel = () => {
   ];
 
   const nextSlide = () => {
-    setDirection(1); 
+    setDirection(1);
     setCurrentIndex((prevIndex) => (prevIndex + 1) % items.length);
   };
 
   const prevSlide = () => {
-    setDirection(-1); 
+    setDirection(-1);
     setCurrentIndex((prevIndex) => (prevIndex - 1 + items.length) % items.length);
   };
 

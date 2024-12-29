@@ -12,7 +12,7 @@ import freepik from "../../assets/logos/fix.png";
 
 const EstemedMembers = () => {
   const membersData = [
-    { name: "Royal Rudra JI Maharaj", role: "Renowned Scholar and Guide", image: slider1 },
+    // { name: "Royal Rudra JI Maharaj", role: "Renowned Scholar and Guide", image: slider1 },
     { name: "Acharya Atul Tiwari", role: "प्रबंधक अध्यक्ष (Head Administrator)", image: slider2 },
     { name: "Anand Tiwari", role: "कोषादायाछ (Treasurer)", image: slider3 },
     { name: "Shivam Tiwari", role: "धर्माचार्य (Media Head)", image: slider4 },

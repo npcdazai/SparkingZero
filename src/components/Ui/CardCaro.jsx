@@ -12,11 +12,11 @@ import { ArrowForwardIcon } from "@chakra-ui/icons";
 import { NavLink } from "react-router-dom";
 
 const membersData = [
-  {
-    name: "Royal Rudra JI Maharaj",
-    role: "Renowned Scholar and Guide",
-    image: slider1,
-  },
+  // {
+  //   name: "Royal Rudra JI Maharaj",
+  //   role: "Renowned Scholar and Guide",
+  //   image: slider1,
+  // },
   {
     name: "Acharya Atul Tiwari",
     role: "प्रबंधक अध्यक्ष (Head Administrator)",
