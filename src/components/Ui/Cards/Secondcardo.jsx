@@ -1,6 +1,7 @@
 import { Box, Button, Image, Text } from "@chakra-ui/react";
 import offering from "../../../assets/Images/cows.png";
 import OrangeBg from "../../../assets/Images/greencow.png";
+import { NavLink } from "react-router-dom";
 
 const SecondCard = () => {
   return (
@@ -25,7 +26,7 @@ const SecondCard = () => {
       />
       <Box
         bgColor="transparent"
-        w={{ base: "100%", md: "50%" }} 
+        w={{ base: "100%", md: "50%" }}
         display="flex"
         flexDirection="column"
         gap={6}
@@ -34,7 +35,7 @@ const SecondCard = () => {
       >
         <Text
           as="h1"
-          fontSize={{ base: "36px", md: "54px" }} 
+          fontSize={{ base: "36px", md: "54px" }}
           fontWeight="bold"
           fontFamily="Roca Two"
           position="relative"
@@ -68,7 +69,7 @@ const SecondCard = () => {
           bgColor="transparent"
           display="flex"
           justifyContent="center"
-          flexDirection={{ base: "column", sm: "row" }} 
+          flexDirection={{ base: "column", sm: "row" }}
           gap={4}
         >
           <Button
@@ -91,33 +92,34 @@ const SecondCard = () => {
           >
             Donate
           </Button>
-
-          <Button
-            display="flex"
-            alignItems="center"
-            gap={3}
-            rounded="full"
-            color="#fff"
-            px={8}
-            py={4}
-            fontSize="md"
-            size="lg"
-            transition="0.5s all"
-            bgColor="#800000"
-            _hover={{
-              bg: "#800000",
-              transform: "translateY(-6px)",
-            }}
-            className="tiro-devanagari-hindi-regular"
-          >
-            About Us
-          </Button>
+          <NavLink to="/cow-offering" >
+            <Button
+              display="flex"
+              alignItems="center"
+              gap={3}
+              rounded="full"
+              color="#fff"
+              px={8}
+              py={4}
+              fontSize="md"
+              size="lg"
+              transition="0.5s all"
+              bgColor="#800000"
+              _hover={{
+                bg: "#800000",
+                transform: "translateY(-6px)",
+              }}
+              className="tiro-devanagari-hindi-regular"
+            >
+              About Us
+            </Button>
+          </NavLink>
         </Box>
 
         <Text
           bgColor="transparent"
           as="span"
-          fontSize={{ base: "1rem", md: "1.25rem" }} 
+          fontSize={{ base: "1rem", md: "1.25rem" }}
           color="#fff"
           className="m-plus-rounded-1c-regular"
         >

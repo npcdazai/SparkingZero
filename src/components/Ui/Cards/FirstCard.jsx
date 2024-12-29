@@ -2,6 +2,7 @@ import { Box, Button, Image, Text, VStack } from "@chakra-ui/react";
 import bannner1 from "../../../assets/Images/banner1.jpg";
 import OrangeBg from "../../../assets/logos/OrangeWallpaper.jpeg";
 import asset from "../../../assets/logos/fix.png";
+import { NavLink } from "react-router-dom";
 
 const FirstCard = () => {
   return (
@@ -89,7 +90,7 @@ const FirstCard = () => {
           >
             Donate
           </Button>
-            
+          <NavLink to="/about" >
           <Button
             display="flex"
             alignItems="center"
@@ -110,6 +111,7 @@ const FirstCard = () => {
           >
             About Us
           </Button>
+          </NavLink>
         </Box>
 
         <Text

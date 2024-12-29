@@ -5,7 +5,7 @@ import templeImage from "../assets/Images/poojas.png";
 import CommonCard from "../components/Ui/CommonCard";
 
 const TypesOfPooja = () => {
-  const [poojaData, setPoojaData] = useState([]); 
+  const [poojaData, setPoojaData] = useState([]);
   const [loading, setLoading] = useState(true);
 
   // axios.defaults.baseURL = "https://ngo-backend-8yek.onrender.com";
@@ -15,15 +15,15 @@ const TypesOfPooja = () => {
       try {
         const response = await axios.get("https://ngo-backend-8yek.onrender.com/api/poojas");
         setPoojaData(response.data);
-        setLoading(false); 
+        setLoading(false);
       } catch (error) {
         console.error("Error fetching poojas:", error);
-        setLoading(false); 
+        setLoading(false);
       }
     };
 
-    fetchPoojas(); 
-  }, []); 
+    fetchPoojas();
+  }, []);
 
   if (loading) {
     return (
@@ -37,6 +37,7 @@ const TypesOfPooja = () => {
     title: pooja.name,
     imageUrl: pooja.image,
     link: pooja.link,
+    description:pooja.description
   }));
 
   return (
@@ -56,12 +57,7 @@ const TypesOfPooja = () => {
       </Heading>
 
       <Text fontSize="sm" textAlign="left" mb={4}>
-        Our temple offers a variety of poojas to cater to the spiritual needs of
-        our devotees. From daily rituals to special ceremonies, each pooja is
-        performed with utmost devotion and adherence to traditional practices.
-        Some of the popular poojas include Ganesh Pooja, Lakshmi Pooja, and
-        Navagraha Pooja. Each pooja is designed to invoke the blessings of the
-        deities and bring peace, prosperity, and happiness to the devotees.
+        यह पूजा विशेष रूप से महत्वपूर्ण अवसरों पर की जाती है, जैसे कि <span style={{fontWeight:"600"}} >विवाह, जन्मदिन,</span> और अन्य प्रमुख जीवन घटनाओं पर।
       </Text>
 
       <CommonCard cardData={cardData} />

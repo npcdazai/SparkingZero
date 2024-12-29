@@ -1,6 +1,7 @@
 import { Box, Button, Image, Text } from "@chakra-ui/react";
 import OrangeBg from "../../../assets/Images/pink.png";
 import offering from "../../../assets/Images/diwali.png";
+import { NavLink } from "react-router-dom";
 
 const SecondCard = () => {
   return (
@@ -92,27 +93,28 @@ const SecondCard = () => {
           >
             Donate
           </Button>
-
-          <Button
-            display="flex"
-            alignItems="center"
-            gap={3}
-            rounded="full"
-            color="#fff"
-            px={8}
-            py={4}
-            fontSize="md"
-            size="lg"
-            transition="0.5s all"
-            bgColor="#800000"
-            _hover={{
-              bg: "#800000",
-              transform: "translateY(-6px)",
-            }}
-            className="tiro-devanagari-hindi-regular"
-          >
-            About Us
-          </Button>
+          <NavLink to="/festivals" >
+            <Button
+              display="flex"
+              alignItems="center"
+              gap={3}
+              rounded="full"
+              color="#fff"
+              px={8}
+              py={4}
+              fontSize="md"
+              size="lg"
+              transition="0.5s all"
+              bgColor="#800000"
+              _hover={{
+                bg: "#800000",
+                transform: "translateY(-6px)",
+              }}
+              className="tiro-devanagari-hindi-regular"
+            >
+              About Us
+            </Button>
+          </NavLink>
         </Box>
 
         <Text
