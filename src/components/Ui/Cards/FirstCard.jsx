@@ -3,8 +3,11 @@ import bannner1 from "../../../assets/Images/banner1.jpg";
 import OrangeBg from "../../../assets/logos/OrangeWallpaper.jpeg";
 import asset from "../../../assets/logos/fix.png";
 import { NavLink } from "react-router-dom";
+import ScannerModal from "../../ScannerModal";
+import { useState } from "react";
 
 const FirstCard = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <Box
       bgImage={OrangeBg}
@@ -71,6 +74,7 @@ const FirstCard = () => {
           gap={4}
         >
           <Button
+            onClick={() => setIsModalOpen(true)}
             display="flex"
             alignItems="center"
             gap={3}
@@ -91,26 +95,26 @@ const FirstCard = () => {
             Donate
           </Button>
           <NavLink to="/about" >
-          <Button
-            display="flex"
-            alignItems="center"
-            gap={3}
-            rounded="full"
-            color="#fff"
-            px={8}
-            py={4}
-            fontSize="md"
-            size="lg"
-            transition="0.5s all"
-            bgColor="#800000"
-            _hover={{
-              bg: "#800000",
-              transform: "translateY(-6px)",
-            }}
-            className="tiro-devanagari-hindi-regular"
-          >
-            About Us
-          </Button>
+            <Button
+              display="flex"
+              alignItems="center"
+              gap={3}
+              rounded="full"
+              color="#fff"
+              px={8}
+              py={4}
+              fontSize="md"
+              size="lg"
+              transition="0.5s all"
+              bgColor="#800000"
+              _hover={{
+                bg: "#800000",
+                transform: "translateY(-6px)",
+              }}
+              className="tiro-devanagari-hindi-regular"
+            >
+              About Us
+            </Button>
           </NavLink>
         </Box>
 
@@ -137,6 +141,7 @@ const FirstCard = () => {
       >
         <Image src={bannner1} width="100%" height="100%" objectFit="cover" />
       </Box>
+      <ScannerModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </Box>
   );
 };

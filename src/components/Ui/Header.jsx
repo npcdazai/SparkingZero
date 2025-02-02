@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Button, HStack, Image } from "@chakra-ui/react";
 import logo from "../../assets/logos/websitelogo.jpg";
 import Navigation from "./Navigation";
+import ScannerModal from "../ScannerModal";
 
 const Header = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <Box px={4} bgColor="white" position="sticky" zIndex={10} top={0}>
       <HStack justifyContent="space-between" bgColor="white">
@@ -17,6 +20,7 @@ const Header = () => {
         <HStack spacing={4} bgColor="white">
           <Navigation />
           <Button
+            onClick={() => setIsModalOpen(true)}
             color="white"
             bgGradient="linear(to-l, #F6B253, #FF9500)"
             _hover={{
@@ -27,6 +31,7 @@ const Header = () => {
           </Button>
         </HStack>
       </HStack>
+      <ScannerModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </Box>
   );
 };

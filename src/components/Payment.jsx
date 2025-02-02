@@ -1,7 +1,11 @@
 import { Box, Text, SimpleGrid, Icon, Button } from "@chakra-ui/react";
+import { useState } from "react";
 import { FaCreditCard, FaUniversity, FaMobileAlt } from "react-icons/fa";
+import ScannerModal from "./ScannerModal";
 
 const Payment = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   // Payment methods data
   const paymentMethods = [
     { title: "Credit/Debit Card", icon: FaCreditCard },
@@ -52,6 +56,7 @@ const Payment = () => {
 
         {/* Donation Button */}
         <Button
+          onClick={() => setIsModalOpen(true)}
           bgGradient="linear(to-r, #F6B253, #FF9500)"
           color="white"
           size="lg"
@@ -62,6 +67,7 @@ const Payment = () => {
           Donate Now
         </Button>
       </Box>
+      <ScannerModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </Box>
   );
 };

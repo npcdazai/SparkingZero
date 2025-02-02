@@ -2,8 +2,11 @@ import { Box, Button, Image, Text } from "@chakra-ui/react";
 import offering from "../../../assets/Images/cows.png";
 import OrangeBg from "../../../assets/Images/greencow.png";
 import { NavLink } from "react-router-dom";
+import ScannerModal from "../../ScannerModal";
+import { useState } from "react";
 
 const SecondCard = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <Box
       display="flex"
@@ -73,6 +76,7 @@ const SecondCard = () => {
           gap={4}
         >
           <Button
+           onClick={() => setIsModalOpen(true)}
             display="flex"
             alignItems="center"
             gap={3}
@@ -139,6 +143,7 @@ const SecondCard = () => {
       >
         <Image src={offering} width="100%" height="100%" objectFit="cover" />
       </Box>
+      <ScannerModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </Box>
   );
 };

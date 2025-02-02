@@ -1,6 +1,9 @@
 import { Box, Button, Text } from "@chakra-ui/react";
+import { useState } from "react";
+import ScannerModal from "./ScannerModal";
 
 const Donation = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <Box textAlign="center" padding="4" bg="gray.50" marginTop="10">
       <Text fontSize="3xl" fontWeight="bold" mb="4">
@@ -10,6 +13,7 @@ const Donation = () => {
         Your generosity helps us continue our services and community activities.
       </Text>
       <Button 
+       onClick={() => setIsModalOpen(true)}
         bgGradient="linear(to-r, #F6B253, #FF9500)"
         color="white"
         size="lg" 
@@ -23,6 +27,7 @@ const Donation = () => {
       >
         Donate Now
       </Button>
+      <ScannerModal isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </Box>
   );
 };
