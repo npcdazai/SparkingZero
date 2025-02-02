@@ -25,6 +25,8 @@ import { MdPeopleAlt, MdEvent } from "react-icons/md";
 import { GiPrayer } from "react-icons/gi";
 import pooja from "../assets/Images/poojas.png";
 import cow from "../assets/Images/cow.png";
+import events from "../assets/Images/event.png"
+import edu from "../assets/Images/saraswati-pooja.jpg"
 
 
 const serviceData = [
@@ -41,12 +43,12 @@ const serviceData = [
   {
     title: "Events",
     description: "Special events throughout the year.",
-    imageUrl: "https://via.placeholder.com/300x200?text=Yoga",
+    imageUrl: events,
   },
   {
     title: "Education",
     description: "Educational sessions and workshops.",
-    imageUrl: "https://via.placeholder.com/300x200?text=Cultural+Evening",
+    imageUrl: edu,
   },
 ];
 
