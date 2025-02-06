@@ -1,29 +1,46 @@
 import { Box, Text, Image, Flex } from "@chakra-ui/react";
 import { FaPray, FaCalendarAlt } from "react-icons/fa"; // Icons for each category
-import pooja from "../assets/Images/circlepooja.png"
-import circle from "../assets/Images/cicrclwfes.png"
-const Categories = () => {
-  const categories = [
-    {
-      title: "Pooja",
-      description: "Description for Pooja",
-      imageUrl: pooja,
-      icon: FaPray,
-    },
-    {
-      title: "Festival",
-      description: "Description for Festival",
-      imageUrl: circle,
-      icon: FaCalendarAlt,
-    },
-  ];
+import pooja from "../assets/Images/circlepooja.png";
+import circle from "../assets/Images/cicrclwfes.png";
+
+const Categories = ({ language }) => {
+  const categories = {
+    english: [
+      {
+        title: "Pooja",
+        description: "Description for Pooja",
+        imageUrl: pooja,
+        icon: FaPray,
+      },
+      {
+        title: "Festival",
+        description: "Description for Festival",
+        imageUrl: circle,
+        icon: FaCalendarAlt,
+      },
+    ],
+    hindi: [
+      {
+        title: "पूजा",
+        description: "पूजा का विवरण",
+        imageUrl: pooja,
+        icon: FaPray,
+      },
+      {
+        title: "त्यौहार",
+        description: "त्यौहार का विवरण",
+        imageUrl: circle,
+        icon: FaCalendarAlt,
+      },
+    ],
+  };
 
   return (
     <Box marginTop="10" padding="4" bg="gray.50">
       <Text fontSize="3xl" fontWeight="bold" mb="4" textAlign="left">
-        Categories
+        {language === "english" ? "Categories" : "श्रेणियाँ"}
       </Text>
-      {categories.map((category, index) => (
+      {categories[language].map((category, index) => (
         <Flex
           key={index}
           borderWidth="1px"

@@ -1,63 +1,72 @@
-import { Box, Text, Image, Flex } from "@chakra-ui/react";
+import { Box, Text, SimpleGrid, Image, Flex } from "@chakra-ui/react";
 import { FaPray, FaCalendarAlt } from "react-icons/fa"; // Icons for each category
-import pooja from "../../assets/Images/circlepooja.png"
-import circle from "../../assets/Images/cicrclwfes.png"
-const CategoriesMobile = () => {
-  const categories = [
-    {
-      title: "Pooja",
-      description: "Description for Pooja",
-      imageUrl: pooja,
-      icon: FaPray,
-    },
-    {
-      title: "Festival",
-      description: "Description for Festival",
-      imageUrl: circle,
-      icon: FaCalendarAlt,
-    },
-  ];
+import pooja from "../../assets/Images/circlepooja.png";
+import circle from "../../assets/Images/cicrclwfes.png";
+import { NavLink } from "react-router-dom";
+
+const CategoriesMobile = ({ setLanguage, language }) => {
+  const cardData = {
+    english: [
+      { title: "Pooja", description: "Description for Pooja", imageUrl: pooja, link: "/pooja", icon: FaPray },
+      { title: "Festival", description: "Description for Festival", imageUrl: circle, link: "/festival", icon: FaCalendarAlt },
+    ],
+    hindi: [
+      { title: "पूजा", description: "पूजा का विवरण", imageUrl: pooja, link: "/pooja", icon: FaPray },
+      { title: "त्यौहार", description: "त्यौहार का विवरण", imageUrl: circle, link: "/festival", icon: FaCalendarAlt },
+    ],
+  };
 
   return (
     <Box marginTop="10" padding="4" bg="gray.50">
-      <Text fontSize={{ base: "2xl", md: "3xl" }} fontWeight="bold" mb="4" textAlign="left">
-        Categories
+      <Text fontSize="3xl" fontWeight="bold" mb="4" textAlign="left">
+        {language === "english" ? "Categories" : "श्रेणियाँ"}
       </Text>
-      {categories.map((category, index) => (
-        <Flex
-          key={index}
-          borderWidth="1px"
-          borderRadius="20px"
-          overflow="hidden"
-          bg="white"
-          padding={{ base: "2", md: "4" }} // Responsive padding
-          alignItems="center"
-          mb="4" // Decrease margin bottom for mobile
-          boxShadow="md"
-        >
-          {/* Image on the left side */}
-          <Image
-            src={category.imageUrl}
-            alt={category.title}
-            boxSize={{ base: "60px", md: "100px" }} // Responsive image size
-            borderRadius="full"
-            marginRight={{ base: "4", md: "6" }} // Responsive margin
-          />
-
-          {/* Text in the middle, left-aligned */}
-          <Box flex="1" textAlign="left">
-            <Text fontSize={{ base: "lg", md: "2xl" }} fontWeight="bold"> {/* Responsive font size */}
-              {category.title}
-            </Text>
-            <Text fontSize={{ base: "sm", md: "md" }}>{category.description}</Text> {/* Responsive font size */}
+      <SimpleGrid columns={[1, 2]} spacing={10}>
+        {cardData[language].map((category, index) => (
+          <Box key={index} borderWidth="1px" borderRadius="20px" overflow="hidden" bg="white">
+            <NavLink to={category.link}>
+              <Box
+                h="180px"
+                w="full"
+                position="relative"
+                overflow="hidden"
+                _hover={{ cursor: "pointer", transform: "scale(1.05)", boxShadow: "lg", animation: "scaleUp 0.3s ease-in-out" }}
+                transition="transform 0.3s, box-shadow 0.3s"
+              >
+                <Image src={category.imageUrl} alt={category.title} h="full" w="full" objectFit="cover" />
+                <Box
+                  position="absolute"
+                  top="0"
+                  left="0"
+                  h="full"
+                  w="full"
+                  bg="rgba(0, 0, 0, 0.5)"
+                  opacity="0"
+                  transition="opacity 0.3s ease-in-out"
+                  display="flex"
+                  flexDirection="column"
+                  alignItems="center"
+                  justifyContent="center"
+                  _hover={{ opacity: 1 }}
+                >
+                  <category.icon size="50px" color="white" />
+                  <Text as="span" color="white" fontSize="sm" fontWeight="bold">
+                    {language === "english" ? "Learn More" : "और जानें"}
+                  </Text>
+                </Box>
+              </Box>
+            </NavLink>
+            <Box padding="4">
+              <Text fontWeight="bold" textAlign="left">
+                {category.title}
+              </Text>
+              <Text fontSize="sm" textAlign="left">
+                {category.description}
+              </Text>
+            </Box>
           </Box>
-
-          {/* Icon on the right side */}
-          <Box>
-            <category.icon size="30px" /> {/* Reduced icon size */}
-          </Box>
-        </Flex>
-      ))}
+        ))}
+      </SimpleGrid>
     </Box>
   );
 };

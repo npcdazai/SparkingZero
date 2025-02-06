@@ -1,4 +1,4 @@
-import { VStack, Image, Text } from "@chakra-ui/react";
+import { VStack, Image, Text, Button } from "@chakra-ui/react";
 import { NavLink, useLocation } from "react-router-dom";
 import home from "../../assets/icons/home.png";
 import event from "../../assets/icons/events.png";
@@ -38,7 +38,7 @@ const tabs = [
   },
 ];
 
-const NavigationMobile = () => {
+const NavigationMobile = ({ language, setLanguage }) => {
   const location = useLocation();
 
   return (
@@ -78,6 +78,16 @@ const NavigationMobile = () => {
           </VStack>
         </NavLink>
       ))}
+          <Button
+            onClick={() => setLanguage(language === "english" ? "hindi" : "english")}
+            color="white"
+            bgGradient="linear(to-l, #F6B253, #FF9500)"
+            _hover={{
+              bgGradient: "linear(to-l, #FF9500, #F6B253)",
+            }}
+          >
+            {language === "english" ? "Hindi" : "इंग्लिश"}
+          </Button>
     </VStack>
   );
 };

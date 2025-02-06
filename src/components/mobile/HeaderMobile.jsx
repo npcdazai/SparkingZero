@@ -4,8 +4,8 @@ import { HamburgerIcon } from "@chakra-ui/icons";
 import logo from "../../assets/logos/websitelogo.jpg";
 import NavigationMobile from "./NavigationMobile";
 
-const HeaderMobile = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+const HeaderMobile = ({language , setLanguage}) => {
+  const { isOpen, onOpen, onClose  } = useDisclosure();
 
   return (
     <Box px={5} bgColor="white" position="sticky" zIndex={10} top={0}>
@@ -40,7 +40,7 @@ const HeaderMobile = () => {
             <DrawerHeader>Navigation</DrawerHeader>
 
             <DrawerBody>
-              <NavigationMobile />
+              <NavigationMobile setLanguage={setLanguage} language={language} />
             </DrawerBody>
           </DrawerContent>
         </Drawer>

@@ -3,15 +3,15 @@ import pooja from "../assets/Images/poojas.png";
 import cow from "../assets/Images/cow.png";
 import kalash from "../assets/Images/new_Images/kalsh.png";
 
-const ServicesRow = ({ des, title, arr }) => {
+const ServicesRow = ({ des, title, arr, language }) => {
   return (
     <Box marginTop="10" padding="4" bg="gray.50">
       <VStack mb={6} alignItems="flex-start">
         <Text fontSize="2xl" fontWeight="bold" mb="4" textAlign="left">
-          {title}
+          {language === "english" ? title : "हमारी सेवाएँ"}
         </Text>
         <Text fontSize="medium" color="261501">
-          {des}
+          {language === "english" ? des : "हम आपको विभिन्न सेवाएँ प्रदान करते हैं जो आपकी आवश्यकताओं को पूरा करती हैं।"}
         </Text>
       </VStack>
       <SimpleGrid columns={[1, 2, 4]} spacing={10}>
@@ -66,10 +66,10 @@ const ServicesRow = ({ des, title, arr }) => {
             </Box>
             <Box padding="4">
               <Text fontWeight="bold" textAlign="left">
-                {service.title}
+                {language === "english" ? service.title : service.hindiTitle}
               </Text>
               <Text fontSize="sm" textAlign="left">
-                {service.description}
+                {language === "english" ? service.description : service.hindiDescription}
               </Text>
             </Box>
           </Box>

@@ -10,35 +10,44 @@ import slider6 from "../../assets/Images/members/images/pp6.jpg";
 import slider7 from "../../assets/Images/members/images/pp2.jpg";
 import freepik from "../../assets/logos/fix.png";
 
-const EstemedMembers = () => {
-  const membersData = [
-    // { name: "Royal Rudra JI Maharaj", role: "Renowned Scholar and Guide", image: slider1 },
-    { name: "Acharya Atul Tiwari", role: "प्रबंधक अध्यक्ष (Head Administrator)", image: slider2 },
-    { name: "Anand Tiwari", role: "कोषादायाछ (Treasurer)", image: slider3 },
-    { name: "Shivam Tiwari", role: "धर्माचार्य (Media Head)", image: slider4 },
-    { name: "Deepak Shukla", role: "Organisation minister", image: slider5 },
-    { name: "Dhanesh Chandra Dubey", role: "Organisation minister", image: slider6 },
-    { name: "Pradeep Tiwari", role: "Treasurer", image: slider7 },
-  ];
+const EstemedMembers = ({ language }) => {
+  const membersData = {
+    english: [
+      { name: "Acharya Atul Tiwari", role: "Head Administrator", image: slider2 },
+      { name: "Anand Tiwari", role: "Treasurer", image: slider3 },
+      { name: "Shivam Tiwari", role: "Media Head", image: slider4 },
+      { name: "Deepak Shukla", role: "Organisation Minister", image: slider5 },
+      { name: "Dhanesh Chandra Dubey", role: "Organisation Minister", image: slider6 },
+      { name: "Pradeep Tiwari", role: "Treasurer", image: slider7 },
+    ],
+    hindi: [
+      { name: "आचार्य अतुल तिवारी", role: "प्रबंधक अध्यक्ष", image: slider2 },
+      { name: "आनंद तिवारी", role: "कोषाध्यक्ष", image: slider3 },
+      { name: "शिवम तिवारी", role: "मीडिया प्रमुख", image: slider4 },
+      { name: "दीपक शुक्ला", role: "संगठन मंत्री", image: slider5 },
+      { name: "धनेश चंद्र दुबे", role: "संगठन मंत्री", image: slider6 },
+      { name: "प्रदीप तिवारी", role: "कोषाध्यक्ष", image: slider7 },
+    ],
+  };
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % membersData.length); // Change every 5 seconds
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % membersData[language].length);
     }, 5000);
     return () => clearInterval(interval);
-  }, [membersData.length]);
+  }, [language, membersData]);
 
   const visibleMembers = [
-    membersData[currentIndex],
-    membersData[(currentIndex + 1) % membersData.length],
-    membersData[(currentIndex + 2) % membersData.length],
+    membersData[language][currentIndex],
+    membersData[language][(currentIndex + 1) % membersData[language].length],
+    membersData[language][(currentIndex + 2) % membersData[language].length],
   ];
 
   const visibleMembersMobile = [
-    membersData[currentIndex],
-    membersData[(currentIndex + 1) % membersData.length],
+    membersData[language][currentIndex],
+    membersData[language][(currentIndex + 1) % membersData[language].length],
   ];
 
   return (
@@ -66,23 +75,19 @@ const EstemedMembers = () => {
       />
       <Flex justify="center" w="100%">
         <AnimatePresence mode="wait">
-          {/* Motion div for the entire SimpleGrid */}
           <motion.div
-            key={currentIndex} // Key based on the currentIndex so the whole group re-renders
-            initial={{ opacity: 0, transform: "translateX(50px)" }} // Start off-screen
-            animate={{ opacity: 1, transform: "translateX(0)" }} // Fade in and slide in
-            exit={{ opacity: 0, transform: "translateX(-50px)" }} // Fade out and slide out
+            key={currentIndex}
+            initial={{ opacity: 0, transform: "translateX(50px)" }}
+            animate={{ opacity: 1, transform: "translateX(0)" }}
+            exit={{ opacity: 0, transform: "translateX(-50px)" }}
             transition={{
               type: "spring",
-              stiffness: 100,  // Increased stiffness for faster transition
-              damping: 15,     // Lower damping for faster movement
-              delay: 0.1,      // Slightly reduced delay for quicker transitions
+              stiffness: 100,
+              damping: 15,
+              delay: 0.1,
             }}
           >
-            <SimpleGrid
-              columns={{ base: 2, lg: 3 }}
-              spacing={{ base: 4, lg: 8 }}
-            >
+            <SimpleGrid columns={{ base: 2, lg: 3 }} spacing={{ base: 4, lg: 8 }}>
               {(window.innerWidth <= 768 ? visibleMembersMobile : visibleMembers).map(
                 (event, index) => (
                   <VStack gap={4} key={event.name}>

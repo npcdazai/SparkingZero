@@ -32,25 +32,34 @@ import edu from "../assets/Images/saraswati-pooja.jpg"
 const serviceData = [
   {
     title: "Pooja",
+    hindiTitle: "पूजा",
     description: "Various Pooja services offered.",
+    hindiDescription: "विभिन्न पूजा सेवाएं प्रदान की जाती हैं।",
     imageUrl: pooja,
   },
   {
     title: "Cow Offering",
+    hindiTitle: "गाय दान",
     description: "Community programs for all.",
+    hindiDescription: "सभी के लिए सामुदायिक कार्यक्रम।",
     imageUrl: cow,
   },
   {
     title: "Events",
+    hindiTitle: "कार्यक्रम",
     description: "Special events throughout the year.",
+    hindiDescription: "साल भर विशेष कार्यक्रम।",
     imageUrl: events,
   },
   {
     title: "Education",
+    hindiTitle: "शिक्षा",
     description: "Educational sessions and workshops.",
+    hindiDescription: "शैक्षिक सत्र और कार्यशालाएँ।",
     imageUrl: edu,
   },
 ];
+
 
 const services = [
   {
@@ -76,34 +85,34 @@ const services = [
 ];
 
 
-const Home = () => {
+const Home = ({ setLanguage, language }) => {
   const AboutUsComponent = useBreakpointValue({
-    base: <AboutUsMobile />,
-    lg: <AboutUs />,
+    base: <AboutUsMobile language={language} setLanguage={setLanguage} />,
+    lg: <AboutUs language={language} setLanguage={setLanguage} />,
   });
 
   const DonationComponent = useBreakpointValue({
-    base: <DonationMobile />,
-    lg: <Donation />,
+    base: <DonationMobile language={language} />,
+    lg: <Donation language={language}  />,
   });
 
   const CategoriesComponent = useBreakpointValue({
-    base: <CategoriesMobile />,
-    lg: <Categories />,
+    base: <CategoriesMobile language={language} />,
+    lg: <Categories language={language}  />,
   });
 
   const ServicesRowComponent = useBreakpointValue({
-    base: <ServicesRowMobile />,
-    lg: <ServiceRow title={"Our Services"} arr={serviceData} />,
+    base: <ServicesRowMobile language={language} />,
+    lg: <ServiceRow title={"Our Services"} arr={serviceData} language={language}  />,
   });
 
   const UpcomingEventsComponent = useBreakpointValue({
-    base: <UpcomingEventsMobile />,
-    lg: <UpcomingEvents />,
+    base: <UpcomingEventsMobile language={language}  />,
+    lg: <UpcomingEvents language={language}  />,
   });
 
   const Vedsak = useBreakpointValue({
-    base: <MobileVedSakti />,
+    base: <MobileVedSakti  />,
     lg: <VedasSection />,
   });
 
@@ -112,15 +121,15 @@ const Home = () => {
       <Carousel />
       {AboutUsComponent}
       {Vedsak}
-      <OurServices title={"Our Services"} arr={services} />
+      <OurServices language={language}  title={"Our Services"} arr={services} />
       {UpcomingEventsComponent}
       {DonationComponent}
       {ServicesRowComponent}
       {CategoriesComponent}
-      <Members />
-      <Explore />
-      <Membership />
-      <Payment />
+      <Members language={language} />
+      <Explore language={language} />
+      <Membership language={language} />
+      {/* <Payment /> */}
     </Box>
   );
 };
