@@ -1,5 +1,4 @@
-import { Box, Text, SimpleGrid, Image, Button } from "@chakra-ui/react";
-import { useState } from "react";
+import { Box, Text, SimpleGrid, Image } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 import pooja from "../assets/Images/pooja.png";
 import diwali from "../assets/Images/diwali.png";
@@ -7,9 +6,7 @@ import program from "../assets/Images/program.png";
 import event from "../assets/Images/event.png";
 import kalash from "../assets/Images/new_Images/kalsh.png";
 
-const AboutUs = ({setLanguage , language}) => {
- 
-  
+const Explore = ({ language }) => {
   const cardData = {
     english: [
       { title: "Pooja", description: "Description for Pooja", imageUrl: pooja, link: "/pooja" },
@@ -27,10 +24,8 @@ const AboutUs = ({setLanguage , language}) => {
 
   return (
     <Box marginTop="10" padding="4" bg="gray.50">
-     
-      
       <Text fontSize="3xl" fontWeight="bold" mb="4" textAlign="left">
-        {language === "english" ? "About Us" : "हमारे बारे में"}
+        {language === "english" ? "Explore" : "अन्वेषण करें"}
       </Text>
       <Text fontSize="medium" mb="8" textAlign="left">
         {language === "english"
@@ -87,4 +82,4 @@ const AboutUs = ({setLanguage , language}) => {
   );
 };
 
-export default AboutUs;
+export default Explore;

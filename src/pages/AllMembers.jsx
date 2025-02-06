@@ -5,7 +5,7 @@ import eventbanner from "../assets/Images/eventbanner.png";
 import Explore from "../components/Explore";
 import { Box, Text, VStack, Spinner } from "@chakra-ui/react";
 
-const AllMembers = () => {
+const AllMembers = ({language}) => {
   const [membersData, setMembersData] = useState([]); 
   const [loading, setLoading] = useState(true);
   axios.defaults.baseURL = "https://ngo-backend-8yek.onrender.com"; 
@@ -90,7 +90,7 @@ const AllMembers = () => {
           </Box>
         );
       })}
-      <Explore />
+      <Explore language={language} />
     </Box>
   );
 };

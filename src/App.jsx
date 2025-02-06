@@ -32,7 +32,7 @@ function App() {
           <Route path="/pooja" element={<TypesOfPooja />} />
           <Route path="/book-pooja" element={<BookPooja />} />
           <Route path="/pooja-offering" element={<PoojaOffering />} />
-          <Route path="/members" element={<AllMembers  />} />
+          <Route path="/members" element={<AllMembers language={language} />} />
           <Route path="/cow-offering" element={<CowOffering setLanguage={setLanguage} language={language} />} />
           <Route path="/festivals" element={<Festivals />} />
         </Routes>
