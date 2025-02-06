@@ -65,8 +65,7 @@ const FooterCom = () => {
             textAlign="start"
             _hover={{ color: "#E5195E", cursor: "pointer" }}
           >
-            You need to be sure there isn’t anything embarrassing hidden in the
-            middle of text.
+            Our expert, committed team put our shared beliefs into action – every day. Together, we combine innovation and collective knowledge to create the extraordinary
           </Text>
           <UnorderedList styleType="none" m="0" p="0">
             <ListItem mb="0.5rem">
@@ -78,7 +77,7 @@ const FooterCom = () => {
                   fontWeight="400"
                   _hover={{ color: "#E5195E", cursor: "pointer" }}
                 >
-                  info@example.com
+                 sales@supportify.in
                 </Text>
               </HStack>
             </ListItem>
@@ -91,7 +90,7 @@ const FooterCom = () => {
                   fontWeight="400"
                   _hover={{ color: "#E5195E", cursor: "pointer" }}
                 >
-                  987-987-930-302
+                  8830333610
                 </Text>
               </HStack>
             </ListItem>
@@ -100,12 +99,12 @@ const FooterCom = () => {
                 <Icon as={CiLocationOn} />
                 <Text
                   color="#E6E6E6"
-                   fontSize="sm"
+                  fontSize="sm"
                   fontWeight="400"
                   textAlign="start"
                   _hover={{ color: "#E5195E", cursor: "pointer" }}
                 >
-                  14/A, Poor Street City Tower, New York USA
+                  Mumbai
                 </Text>
               </HStack>
             </ListItem>
@@ -116,10 +115,10 @@ const FooterCom = () => {
         <Flex w={{ base: "100%", lg: "70%" }} gap={8}>
           {footerData.map((val) => (
             <Box key={val.id}
-            mr="5rem">
+              mr="5rem">
               <Heading
                 color="#FFFFFF"
-                 fontSize="sm"
+                fontSize="sm"
                 fontWeight="700"
                 mb="1rem"
               >
