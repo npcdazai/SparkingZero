@@ -29,8 +29,8 @@ function AboutMeCard() {
         Acharya Atul Tiwari
       </Heading>
       <Text mb={4}>
-        Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.
-        Donec sollicitudin molestie malesuada. Mauris blandit aliquet elit
+        Acharya Atul Tiwari is the visionary founder and dedicated leader of Shiv-Shakti, an organization committed to promoting education, environmental conservation, women’s empowerment, healthcare access With a strong passion for social change and a deep-rooted commitment to community development,  Acharya Atul Tiwari  has been instrumental in driving impactful initiatives that have transformed countless lives.
+      
       </Text>
       <Stack direction="row" justify="center" spacing={4}>
         <Link href="https://linkedin.com" isExternal>
