@@ -1,114 +1,200 @@
-import { Box, Text, SimpleGrid, Image } from "@chakra-ui/react";
-import { NavLink } from "react-router-dom";
+import {
+  Box,
+  HStack,
+  Image,
+  Text,
+  useBreakpointValue,
+  VStack
+} from "@chakra-ui/react";
 import eventbanner from "../assets/Images/eventbanner.png";
+import EventInfo from "../components/Events/EventInfo";
+import EventVital from "../components/Events/EventVital";
+import mahaparsad from "../assets/Videos/test.mp4";
+import ec1 from "../assets/Videos/ec1.mp4";
+import ec2 from "../assets/Videos/ec2.mp4";
+import ec3 from "../assets/Videos/ayy.mp4";
+import ec4 from "../assets/Videos/swaha.mp4";
 import puja from "../assets/Images/new_Images/pujaEvent.jpg";
 import parsad from "../assets/Images/new_Images/parsadevent.jpg";
 import marriage from "../assets/Images/new_Images/marriage.jpg";
-import kalash from "../assets/Images/new_Images/kalsh.png";
+import EventInfoMobile from "../components/mobile/EventInfoMobile";
 
-const Events = ({ language }) => {
-  const cardData = {
-    english: [
-      {
-        title: "Puja",
-        description: "Discover indispensable facts about motivation in these paragraphs.",
-        imageUrl: puja,
-        link: "/puja"
-      },
-      {
-        title: "Prasad Distribution",
-        description: "Learn about the distribution of prasad during events.",
-        imageUrl: parsad,
-        link: "/prasad"
-      },
-      {
-        title: "Marriage Ceremony",
-        description: "Join us in celebrating this beautiful ceremony.",
-        imageUrl: marriage,
-        link: "/marriage"
-      },
-    ],
-    hindi: [
-      {
-        title: "पूजा",
-        description: "पूजा के बारे में जानकारी",
-        imageUrl: puja,
-        link: "/puja"
-      },
-      {
-        title: "प्रसाद वितरण",
-        description: "समारोहों के दौरान प्रसाद वितरण के बारे में जानें",
-        imageUrl: parsad,
-        link: "/prasad"
-      },
-      {
-        title: "विवाह समारोह",
-        description: "हमारे साथ इस सुंदर समारोह का हिस्सा बनें",
-        imageUrl: marriage,
-        link: "/marriage"
-      },
-    ],
-  };
+const info = [
+  {
+    id: 1,
+    img: puja,
+    title: "शिव शक्ति कालका महा याग बिश्व कल्याण हेतु",
+    description:
+      "Discover indispensable facts about motivation in these paragraphs. If there’s at least one fact you didn’t know before, imagine the difference it might make.",
+    dateTime: "Sunday (8:00 am - 9:00 am)",
+    location: "56 Thatcher Avenue River Forest",
+    vidurl: ec2
+  },
+  {
+    id: 2,
+    img: puja,
+    title: "प्रयाग राज मे संतो को दच्छिना वितरण",
+    description:
+      "Discover indispensable facts about motivation in these paragraphs. If there’s at least one fact you didn’t know before, imagine the difference it might make.",
+    dateTime: "Sunday (8:00 am - 9:00 am)",
+    location: "56 Thatcher Avenue River Forest",
+    vidurl: ec1
+  },
+  {
+    id: 3,
+    img: puja,
+    title: "Puja",
+    description:
+      "Discover indispensable facts about motivation in these paragraphs. If there’s at least one fact you didn’t know before, imagine the difference it might make.",
+    dateTime: "Sunday (8:00 am - 9:00 am)",
+    location: "56 Thatcher Avenue River Forest",
+    vidurl: mahaparsad
+  },
+  {
+    id: 4,
+    img: parsad,
+    title: "माताओ के लिए वस्त्र वितरण",
+    description:
+      "Discover indispensable facts about motivation in these paragraphs. If there’s at least one fact you didn’t know before, imagine the difference it might make.",
+    dateTime: "Sunday (9:00 am - 10:00 am)",
+    location: "56 Thatcher Avenue River Forest",
+    vidurl: ec3
+  },
+  {
+    id: 4,
+    img: parsad,
+    title: "रामायण हवन बिश्व कल्याण हेतु",
+    description:
+      "Discover indispensable facts about motivation in these paragraphs. If there’s at least one fact you didn’t know before, imagine the difference it might make.",
+    dateTime: "Sunday (9:00 am - 10:00 am)",
+    location: "56 Thatcher Avenue River Forest",
+    vidurl: ec4
+  },
+];
 
-  return (
-    <Box marginTop="10" padding="4" bg="gray.50">
-      <Text fontSize="3xl" fontWeight="bold" mb="4" textAlign="left">
-        {language === "english" ? "Upcoming Events" : "आगामी इवेंट्स"}
-      </Text>
-      <Text fontSize="medium" mb="8" textAlign="left">
-        {language === "english"
-          ? "Join us for these special events and be part of the spiritual celebrations."
-          : "इन विशेष आयोजनों में हमारे साथ जुड़ें और आध्यात्मिक उत्सवों का हिस्सा बनें।"}
-      </Text>
-      <SimpleGrid columns={[1, 2, 3]} spacing={10}>
-        {cardData[language].map((event, index) => (
-          <Box
-            key={index}
-            borderWidth="1px"
-            borderRadius="20px"
-            overflow="hidden"
-            bg="white"
-            _hover={{ cursor: "pointer", transform: "scale(1.05)", boxShadow: "lg", animation: "scaleUp 0.3s ease-in-out" }}
-            transition="transform 0.3s, box-shadow 0.3s"
-          >
-            <NavLink to={event.link}>
-              <Box h="180px" w="full" position="relative" overflow="hidden">
-                <Image src={event.imageUrl} alt={event.title} h="full" w="full" objectFit="cover" />
-                <Box
-                  position="absolute"
-                  top="0"
-                  left="0"
-                  h="full"
-                  w="full"
-                  bg="rgba(0, 0, 0, 0.5)"
-                  opacity="0"
-                  transition="opacity 0.3s ease-in-out"
-                  display="flex"
-                  flexDirection="column"
-                  alignItems="center"
-                  justifyContent="center"
-                  _hover={{ opacity: 1 }}
-                >
-                  <Image h="100px" src={kalash} />
-                  <Text as="span" color="white" fontSize="sm" fontWeight="bold">
-                    {language === "english" ? "Learn More" : "और जानें"}
-                  </Text>
-                </Box>
-              </Box>
-            </NavLink>
-            <Box padding="4">
-              <Text fontWeight="bold" textAlign="left">
-                {event.title}
-              </Text>
-              <Text fontSize="sm" textAlign="left">
-                {event.description}
-              </Text>
-            </Box>
-          </Box>
+const MobileEvents = () => (
+  <Box p={4}>
+    <VStack
+      position="relative"
+      borderRadius="20px"
+      overflow="hidden"
+      bg="gray.100"
+      w="full"
+      h="20vh"
+      alignItems="center"
+      bgImage={`url(${eventbanner})`}
+      bgSize="cover"
+      p={8}
+      mb={8}
+    >
+      <Box
+        bgColor="transparent"
+        w="100%"
+        display="flex"
+        flexDirection="column"
+        gap={6}
+        p={4}
+        h="100%"
+      >
+        <Text
+          as="h1"
+          fontSize="x-large"
+          fontWeight="bold"
+          fontFamily="Roca Two"
+          color="#fff"
+          className="tiro-devanagari-hindi-regular"
+        >
+          Event
+        </Text>
+        <Text
+          as="span"
+          fontSize="1rem"
+          color="#fff"
+          className="m-plus-rounded-1c-regular"
+        >
+          Jai Kalka Maa
+        </Text>
+      </Box>
+    </VStack>
+
+    <VStack w="100%" alignItems="flex-start">
+      <VStack w="100%">
+        <EventVital />
+      </VStack>
+      <VStack w="100%" h="100%" overflowY="scroll">
+        {info.map((event) => (
+          <EventInfoMobile key={event.id} {...event} />
         ))}
-      </SimpleGrid>
-    </Box>
-  );
+      </VStack>
+
+    </VStack>
+  </Box>
+);
+
+const LgEvents = () => (
+  <Box p={4}>
+    <VStack
+      position="relative"
+      borderRadius="20px"
+      overflow="hidden"
+      bg="gray.100"
+      w="full"
+      h="50vh"
+      alignItems="center"
+      bgImage={`url(${eventbanner})`}
+      bgSize="cover"
+      p={8}
+      mb={8}
+    >
+      <Box
+        bgColor="transparent"
+        w="100%"
+        display="flex"
+        flexDirection="column"
+        gap={6}
+        p={4}
+        h="100%"
+      >
+        <Text
+          as="h1"
+          fontSize="x-large"
+          fontWeight="bold"
+          fontFamily="Roca Two"
+          color="#fff"
+          className="tiro-devanagari-hindi-regular"
+        >
+          Event
+        </Text>
+        <Text
+          as="span"
+          fontSize="1rem"
+          color="#fff"
+          className="m-plus-rounded-1c-regular"
+        >
+          Jai Kalka Maa
+        </Text>
+      </Box>
+    </VStack>
+
+    <HStack w="100%" alignItems="flex-start">
+      <VStack w="70%" h="800px" overflowY="scroll">
+        {info.map((event) => (
+          <EventInfo key={event.id} {...event} />
+        ))}
+      </VStack>
+      <VStack w="30%">
+        <EventVital />
+      </VStack>
+    </HStack>
+  </Box>
+);
+
+const Events = () => {
+  const EventComponent = useBreakpointValue({
+    base: <MobileEvents />,
+    lg: <LgEvents />
+  });
+  return <>{EventComponent}</>;
 };
 
 export default Events;
