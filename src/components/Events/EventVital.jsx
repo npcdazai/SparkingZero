@@ -33,13 +33,13 @@ function AboutMeCard() {
       
       </Text>
       <Stack direction="row" justify="center" spacing={4}>
-        <Link href="https://chat.whatsapp.com/K8vkxXI7Wr9ESO9qmTV01U" isExternal>
+        <Link _hover={{color:"green"}} href="https://chat.whatsapp.com/K8vkxXI7Wr9ESO9qmTV01U" isExternal>
           <Icon as={FaWhatsapp} boxSize={5} />
         </Link>
         {/* <Link href="https://twitter.com" isExternal>
           <Icon as={FaTwitter} boxSize={5} />
         </Link> */}
-        <Link href="https://www.facebook.com/share/1EHetgff2o/" isExternal>
+        <Link _hover={{color:"blue"}} href="https://www.facebook.com/share/1EHetgff2o/" isExternal>
           <Icon as={FaFacebook} boxSize={5} />
         </Link>
         {/* <Link href="https://github.com" isExternal>
