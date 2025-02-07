@@ -42,9 +42,9 @@ function AboutMeCard() {
         <Link href="https://facebook.com" isExternal>
           <Icon as={FaFacebook} boxSize={5} />
         </Link>
-        <Link href="https://github.com" isExternal>
+        {/* <Link href="https://github.com" isExternal>
           <Icon as={FaGithub} boxSize={5} />
-        </Link>
+        </Link> */}
       </Stack>
     </Box>
   );
