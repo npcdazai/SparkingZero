@@ -7,7 +7,7 @@ import {
   Icon,
   Link,
 } from "@chakra-ui/react";
-import { FaLinkedin, FaTwitter, FaFacebook, FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaTwitter, FaFacebook, FaGithub, FaWhatsapp } from "react-icons/fa";
 import slider1 from "../../assets/Images/members/images/person1.jpg";
 
 function AboutMeCard() {
@@ -33,13 +33,13 @@ function AboutMeCard() {
       
       </Text>
       <Stack direction="row" justify="center" spacing={4}>
-        <Link href="https://linkedin.com" isExternal>
-          <Icon as={FaLinkedin} boxSize={5} />
+        <Link href="https://chat.whatsapp.com/K8vkxXI7Wr9ESO9qmTV01U" isExternal>
+          <Icon as={FaWhatsapp} boxSize={5} />
         </Link>
-        <Link href="https://twitter.com" isExternal>
+        {/* <Link href="https://twitter.com" isExternal>
           <Icon as={FaTwitter} boxSize={5} />
-        </Link>
-        <Link href="https://facebook.com" isExternal>
+        </Link> */}
+        <Link href="https://www.facebook.com/share/1EHetgff2o/" isExternal>
           <Icon as={FaFacebook} boxSize={5} />
         </Link>
         {/* <Link href="https://github.com" isExternal>
