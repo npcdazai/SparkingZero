@@ -101,6 +101,7 @@ const SecondCard = () => {
               display="flex"
               alignItems="center"
               gap={3}
+               w="100%"
               rounded="full"
               color="#fff"
               px={8}

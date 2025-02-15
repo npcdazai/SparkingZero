@@ -81,6 +81,7 @@ const SecondCard = () => {
             onClick={() => setIsModalOpen(true)}
             alignItems="center"
             gap={3}
+            
             rounded="full"
             color="#fff"
             px={8}
@@ -103,6 +104,7 @@ const SecondCard = () => {
               alignItems="center"
               gap={3}
               rounded="full"
+               w="100%"
               color="#fff"
               px={8}
               py={4}
